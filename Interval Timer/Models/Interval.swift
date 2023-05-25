@@ -7,11 +7,11 @@
 
 import Foundation
 
-public struct Interval: CustomStringConvertible, Identifiable {
+internal struct _Interval: Identifiable {
 	/*
 	 One interval of an IntervalTimer
 	 
-	 >>> interval = Interval()
+	 >>> interval = _Interval()
 	 >>> print(interval)
 	 Interval of duration 60.0 seconds
 	 >>> interval.duration
@@ -26,15 +26,6 @@ public struct Interval: CustomStringConvertible, Identifiable {
 	 id: Unique identifier
 	 index: The index of this interval within an IntervalTimer, starting from 0
 	 */
-	public var description: String {
-		var suffix: String
-		if duration == 1 {
-			suffix = ""
-		} else {
-			suffix = "s"
-		}
-		return "Interval of duration \(duration) second\(suffix)"
-	}
 	var duration: TimeInterval
 	public var id = UUID()
 	var index: Int

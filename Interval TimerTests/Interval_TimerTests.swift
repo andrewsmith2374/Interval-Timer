@@ -11,51 +11,43 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testIntervalInitDefault() {
 		// Test that Interval initializes proper default values
-		let interval = Interval()
+		let interval = _Interval()
 		
-		XCTAssertEqual(String(describing: interval), "Interval of duration 60.0 seconds")
 		XCTAssertEqual(interval.duration, 60.0)
 		XCTAssertEqual(interval.index, 0)
 	}
 	
-	func testIntervalDescriptionOneSecond() {
-		// Test that Interval has proper String representation when duration is one second
-		let interval = Interval(duration: 1.0)
-		
-		XCTAssertEqual(String(describing: interval), "Interval of duration 1.0 second")
-	}
-		
 	func testIntervalInitDuration() {
 		// Test that Interval properly initializes duration
-		let interval = Interval(duration: 2.0)
+		let interval = _Interval(duration: 2.0)
 		
 		XCTAssertEqual(interval.duration, 2.0)
 	}
 	
 	func testIntervalInitDurationNegative() {
 		// Test that Interval properly handles negative duration inputs
-		let interval = Interval(duration: -20.0)
+		let interval = _Interval(duration: -20.0)
 		
 		XCTAssertEqual(interval.duration, 0.0)
 	}
 	
 	func testIntervalInitDurationInt() {
 		// Test that Interal properly handles int inputs
-		let interval = Interval(duration: 60)
+		let interval = _Interval(duration: 60)
 		
 		XCTAssertEqual(interval.duration, 60.0)
 	}
 	
 	func testIntervalInitIndex() {
 		// Test that Interval properly intializes index
-		let interval = Interval(index: 1)
+		let interval = _Interval(index: 1)
 		
 		XCTAssertEqual(interval.index, 1)
 	}
 	
 	func testIntervalInitIndexNegative() {
 		// Test that Interval properly handles negative index inputs
-		let interval = Interval(index: -1)
+		let interval = _Interval(index: -1)
 		
 		XCTAssertEqual(interval.index, 0)
 	}
@@ -79,21 +71,21 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testIntervalTimerDescriptionOneInterval() {
 		// Test that IntervalTimer has proper String representation when it has one interval
-		let intervalTimer = IntervalTimer(intervals: [Interval()])
+		let intervalTimer = IntervalTimer(intervals: [_Interval()])
 		
 		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 1 Interval")
 	}
 	
 	func testIntervalTimerDescriptionMultipleIntervals() {
 		// Test that IntervalTimer has proper String representation when empty
-		let intervalTimer = IntervalTimer(intervals: [Interval(), Interval()])
+		let intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval()])
 		
 		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 2 Intervals")
 	}
 	
 	func testIntervalTimerInitIntervalsOneInterval() {
 		// Test that IntervalTimer correctly initializes with one interval
-		let intervalTimer = IntervalTimer(intervals: [Interval()])
+		let intervalTimer = IntervalTimer(intervals: [_Interval()])
 		
 		XCTAssertEqual(intervalTimer.intervals.count, 1)
 		XCTAssertEqual(intervalTimer.intervals[0].index, 0)
@@ -101,7 +93,7 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testIntervalTimerInitIntervalsMultipleIntervals() {
 		// Test that IntervalTimer correctly initializes with proper indexing
-		let intervalList = [Interval(), Interval(), Interval(), Interval()]
+		let intervalList = [_Interval(), _Interval(), _Interval(), _Interval()]
 		let intervalTimer = IntervalTimer(intervals: intervalList)
 		var i: Int = 0
 		
@@ -117,6 +109,14 @@ final class Interval_TimerTests: XCTestCase {
 		let intervalTimer = IntervalTimer(title: title)
 		
 		XCTAssertEqual(intervalTimer.title, title)
+	}
+	
+	func testIntervalTimerStart() {
+		// Test that IntervalTimer.start() correctly starts the first interval and sets status to 1
+	}
+	
+	func testIntervalTimerStartAlreadyInProgress() {
+		// Test that IntervalTimer.start() does nothing if already in progress
 	}
 		
 	override func setUpWithError() throws {
