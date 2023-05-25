@@ -9,9 +9,27 @@ import XCTest
 
 final class Interval_TimerTests: XCTestCase {
 	
+	func testIntervalTimerDescriptionEmpty() {
+		// Test that IntervalTimer has proper String representation when empty
+		let intervalTimer = IntervalTimer()
+		let str = String(describing: intervalTimer)
+		
+		XCTAssertEqual(str, "Interval Timer with 0 Intervals")
+	}
+	
+	func testIntervalTimerDescriptionOneInterval() {
+		// Test that IntervalTimer has proper String representation when it has one interval
+		// TODO: When Interval is implemented
+	}
+	
+	func testIntervalTimerDescriptionMultipleIntervals() {
+		// Test that IntervalTimer has proper String representation when empty
+		// TODO: When Interval is implemented
+	}
+	
 	func testIntervalTimerInitTitleDefault() {
 		// Test that IntervalTimer initializes proper default title values
-		var intervalTimer = IntervalTimer()
+		let intervalTimer = IntervalTimer()
 		
 		XCTAssertEqual(intervalTimer.getTitle(), "Timer")
 	}
@@ -19,7 +37,7 @@ final class Interval_TimerTests: XCTestCase {
 	func testIntervalTimerInitTitleDefined() {
 		// Test that IntervalTimer initializes proper defined title values
 		let title = "Test"
-		var intervalTimer = IntervalTimer(title: title)
+		let intervalTimer = IntervalTimer(title: title)
 		
 		XCTAssertEqual(intervalTimer.getTitle(), title)
 	}

@@ -7,26 +7,24 @@
 
 import Foundation
 
-public struct IntervalTimer {
+public struct IntervalTimer: CustomStringConvertible {
 	/*
 	 Timer that continues to predetermined intervals
 	 
 	 >>> var intervalTimer = IntervalTimer()
 	 >>> print(intervalTimer)
-	 "Interval Timer with 1 Interval of 60 seconds"
-	 >>> intervalTimer.getTitle()
-	 "Timer"
-	 >>> intervalTimer.getIntervals()
-	 [Interval]
+	 "Interval Timer with 1 Interval"
 	 >>> intervalTimer.getAutoContinue()
 	 False
-	 >>> intervalTimer.getID() is UUID
-	 True
-	 >>> intervalTimer.setTitle(title: "Test")
-	 >>> intervalTimer.addInterval()
-	 >>> intervalTimer.setIntervals([Interval(), Interval()]
+	 >>> intervalTimer.getIntervals()
+	 [Interval]
+	 >>> intervalTimer.getTitle()
+	 "Timer"
 	 >>> intervalTimer.toggleAutoContinue()
 	 >>> intervalTimer.setAutoContinue(True)
+	 >>> intervalTimer.addInterval()
+	 >>> intervalTimer.setIntervals([Interval(), Interval()]
+	 >>> intervalTimer.setTitle(title: "Test")
 	 
 	 === Attributes ===
 	 autoContinue: Whether the timer will automatically continue to the next interval after each interval elapses
@@ -35,6 +33,16 @@ public struct IntervalTimer {
 	 title: The title of this timer
 	 */
 	var autoContinue: Bool
+	public var description: String {
+		var suffix: String
+		let numIntervals: Int = intervals.count
+		if numIntervals == 1 {
+			suffix = ""
+		} else {
+			suffix = "s"
+		}
+		return "Interval Timer with \(numIntervals) Interval\(suffix)"
+	}
 	let id = UUID()
 	// Change to [Interval] once Interval has been implemented
 	var intervals: Array<Any>
@@ -51,12 +59,7 @@ public struct IntervalTimer {
 		// Changes self.title to <title>
 		self.title = title
 	}
-	
-	func getID() -> UUID {
-		// Returns self.id
-		return self.id
-	}
-	
+		
 	func getTitle() -> String {
 		// Returns self.title
 		return self.title
