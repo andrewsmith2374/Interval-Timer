@@ -42,14 +42,23 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		return "Interval Timer with \(numIntervals) Interval\(suffix)"
 	}
 	public let id = UUID()
-	// TODO: Change to [Interval] once Interval has been implemented
-	var intervals: Array<Any>
+	var intervals: [Interval]
 	var title: String
 	
-	init(autoContinue: Bool = false, intervals: Array<Any> = [], title: String = "Timer") {
+	init(autoContinue: Bool = false, intervals: [Interval] = [], title: String = "Timer") {
 		// Creates a new IntervalTimer with given <autoContinue>, default true; <intervals>, default empty; and <title>, default 'Timer'
 		self.autoContinue = autoContinue
 		self.intervals = intervals
 		self.title = title
+
+		self.initializeIntervals()
+	}
+	
+	private mutating func initializeIntervals() {
+		var i: Int = 0
+		for _ in self.intervals {
+			intervals[i].index = i
+			i += 1
+		}
 	}
 }

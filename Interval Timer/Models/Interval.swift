@@ -45,6 +45,10 @@ public struct Interval: CustomStringConvertible, Identifiable {
 		} else {
 			self.duration = TimeInterval(duration)
 		}
-		self.index = index
+		if index < 0 {
+			self.index = 0
+		} else {
+			self.index = index
+		}
 	}
 }
