@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct IntervalTimer: CustomStringConvertible {
+public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	/*
 	 Timer that continues to predetermined intervals
 	 
