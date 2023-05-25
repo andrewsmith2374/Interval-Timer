@@ -11,7 +11,7 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testIntervalTimerInitTitleDefault() {
 		// Test that IntervalTimer initializes proper default title values
-		let intervalTimer = IntervalTimer()
+		var intervalTimer = IntervalTimer()
 		
 		XCTAssertEqual(intervalTimer.getTitle(), "Timer")
 	}
@@ -19,9 +19,41 @@ final class Interval_TimerTests: XCTestCase {
 	func testIntervalTimerInitTitleDefined() {
 		// Test that IntervalTimer initializes proper defined title values
 		let title = "Test"
-		let intervalTimer = IntervalTimer(title: title)
+		var intervalTimer = IntervalTimer(title: title)
 		
 		XCTAssertEqual(intervalTimer.getTitle(), title)
+	}
+	
+	func testIntervalTimerSetTitle() {
+		// Test that IntervalTimer.setTitle correctly changes self.title
+		let title = "Test"
+		var intervalTimer = IntervalTimer()
+		intervalTimer.setTitle(title: title)
+		
+		XCTAssertEqual(intervalTimer.getTitle(), title)
+	}
+	
+	override func setUpWithError() throws {
+		// Put setup code here. This method is called before the invocation of each test method in the class.
+	}
+
+	override func tearDownWithError() throws {
+		// Put teardown code here. This method is called after the invocation of each test method in the class.
+	}
+
+	func testExample() throws {
+		// This is an example of a functional test case.
+		// Use XCTAssert and related functions to verify your tests produce the correct results.
+		// Any test you write for XCTest can be annotated as throws and async.
+		// Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
+		// Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+	}
+
+	func testPerformanceExample() throws {
+		// This is an example of a performance test case.
+		measure {
+			// Put the code you want to measure the time of here.
+		}
 	}
 
 }

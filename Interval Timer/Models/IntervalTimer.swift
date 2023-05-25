@@ -8,6 +8,18 @@
 import Foundation
 
 public struct IntervalTimer {
+	/*
+	 Timer that continues to predetermined intervals
+	 
+	 >>> var intervalTimer = IntervalTimer()
+	 >>> print(intervalTimer)
+	 "Interval Timer with 1 Interval of 60 seconds"
+	 >>> intervalTimer.getTitle()
+	 "Timer"
+	 >>> intervalTimer.getIntervals()
+	 [Interval]
+	 */
+	
 	var title: String
 	
 	init(title: String = "Timer") {
