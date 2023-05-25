@@ -139,8 +139,8 @@
 		DB9605482A1EFF4400BDB49A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DB9605492A1EFF6F00BDB49A /* IntervalTimer.swift */,
 				DB820FD82A1F511B00C1C660 /* Interval.swift */,
+				DB9605492A1EFF6F00BDB49A /* IntervalTimer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

@@ -41,7 +41,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		}
 		return "Interval Timer with \(numIntervals) Interval\(suffix)"
 	}
-	let id = UUID()
+	public let id = UUID()
 	// TODO: Change to [Interval] once Interval has been implemented
 	var intervals: Array<Any>
 	var title: String

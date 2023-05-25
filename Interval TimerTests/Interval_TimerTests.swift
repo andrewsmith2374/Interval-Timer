@@ -9,6 +9,57 @@ import XCTest
 
 final class Interval_TimerTests: XCTestCase {
 	
+	func testIntervalInitDefault() {
+		// Test that Interval initializes proper default values
+		let interval = Interval()
+		
+		XCTAssertEqual(String(describing: interval), "Interval of duration 60.0 seconds")
+		XCTAssertEqual(interval.duration, 60.0)
+		XCTAssertEqual(interval.index, 0)
+	}
+	
+	func testIntervalDescriptionOneSecond() {
+		// Test that Interval has proper String representation when duration is one second
+		let interval = Interval(duration: 1.0)
+		
+		XCTAssertEqual(String(describing: interval), "Interval of duration 1.0 second")
+	}
+		
+	func testIntervalInitDuration() {
+		// Test that Interval properly initializes duration
+		let interval = Interval(duration: 2.0)
+		
+		XCTAssertEqual(interval.duration, 2.0)
+	}
+	
+	func testIntervalInitDurationNegative() {
+		// Test that Interval properly handles negative duration inputs
+		let interval = Interval(duration: -20.0)
+		
+		XCTAssertEqual(interval.duration, 0.0)
+	}
+	
+	func testIntervalInitDurationInt() {
+		// Test that Interal properly handles int inputs
+		let interval = Interval(duration: 60)
+		
+		XCTAssertEqual(interval.duration, 60.0)
+	}
+	
+	func testIntervalInitIndex() {
+		// Test that Interval properly intializes index
+		let interval = Interval(index: 1)
+		
+		XCTAssertEqual(interval.index, 1)
+	}
+	
+	func testIntervalInitIndexNegative() {
+		// Test that Interval properly handles negative index inputs
+		let interval = Interval(index: -1)
+		
+		XCTAssertEqual(interval.index, 0)
+	}
+	
 	func testIntervalTimerInitDefault() {
 		// Test that IntervalTimer initializes proper default values
 		let intervalTimer = IntervalTimer()
@@ -29,6 +80,9 @@ final class Interval_TimerTests: XCTestCase {
 	// TODO: When Interval is implemented
 	func testIntervalTimerDescriptionOneInterval() {
 		// Test that IntervalTimer has proper String representation when it has one interval
+		let intervalTimer = IntervalTimer(intervals: [Interval()])
+		
+		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 1 Interval")
 	}
 	
 	// TODO: When Interval is implemented
