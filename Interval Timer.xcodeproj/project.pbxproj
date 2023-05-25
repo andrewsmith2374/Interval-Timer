@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB820FD92A1F511B00C1C660 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
+		DB820FDA2A1F511B00C1C660 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
 		DB96051E2A1EFD4700BDB49A /* Interval_TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96051D2A1EFD4700BDB49A /* Interval_TimerApp.swift */; };
 		DB9605202A1EFD4700BDB49A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96051F2A1EFD4700BDB49A /* ContentView.swift */; };
 		DB9605222A1EFD4800BDB49A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9605212A1EFD4800BDB49A /* Assets.xcassets */; };
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB820FD82A1F511B00C1C660 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		DB96051A2A1EFD4700BDB49A /* Interval Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB96051D2A1EFD4700BDB49A /* Interval_TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval_TimerApp.swift; sourceTree = "<group>"; };
 		DB96051F2A1EFD4700BDB49A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9605492A1EFF6F00BDB49A /* IntervalTimer.swift */,
+				DB820FD82A1F511B00C1C660 /* Interval.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,6 +277,7 @@
 			files = (
 				DB9605202A1EFD4700BDB49A /* ContentView.swift in Sources */,
 				DB96051E2A1EFD4700BDB49A /* Interval_TimerApp.swift in Sources */,
+				DB820FD92A1F511B00C1C660 /* Interval.swift in Sources */,
 				DB96054A2A1EFF6F00BDB49A /* IntervalTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +288,7 @@
 			files = (
 				DB96054B2A1F03B500BDB49A /* IntervalTimer.swift in Sources */,
 				DB9605302A1EFD4800BDB49A /* Interval_TimerTests.swift in Sources */,
+				DB820FDA2A1F511B00C1C660 /* Interval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
