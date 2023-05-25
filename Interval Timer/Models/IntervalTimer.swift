@@ -18,16 +18,28 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	 false
 	 >>> intervalTimer.intervals
 	 [Interval]
+	 >>> intervalTimer.status
+	 0
 	 >>> intervalTimer.title
 	 "Timer"
 	 >>> intervalTimer.autoContinue = true
 	 >>> intervalTimer.intervals = [Interval(), Interval()]
 	 >>> intervalTimer.title = "Title"
+	 >>> intervalTimer.start()
+	 >>> intervalTimer.status
+	 1
+	 >>> intervalTimer.pause()
+	 >>> intervalTimer.status
+	 2
+	 >>> intervalTimer.cancel()
+	 >>> intervalTimer.status
+	 3
 	 
 	 === Attributes ===
 	 autoContinue: Whether the timer will automatically continue to the next interval after each interval elapses
 	 id: Unique identifier
 	 intervals: A list of each interval contained in this timer
+	 status: 0 if this timer has not been started, 1 if in progress, 2 if paused, 3 if finished
 	 title: The title of this timer
 	 */
 	var autoContinue: Bool
