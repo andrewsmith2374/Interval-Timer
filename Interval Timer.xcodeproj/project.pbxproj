@@ -14,6 +14,7 @@
 		DB9605302A1EFD4800BDB49A /* Interval_TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96052F2A1EFD4800BDB49A /* Interval_TimerTests.swift */; };
 		DB96053A2A1EFD4800BDB49A /* Interval_TimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9605392A1EFD4800BDB49A /* Interval_TimerUITests.swift */; };
 		DB96053C2A1EFD4800BDB49A /* Interval_TimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96053B2A1EFD4800BDB49A /* Interval_TimerUITestsLaunchTests.swift */; };
+		DB96054A2A1EFF6F00BDB49A /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9605492A1EFF6F00BDB49A /* IntervalTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		DB9605352A1EFD4800BDB49A /* Interval TimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Interval TimerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9605392A1EFD4800BDB49A /* Interval_TimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval_TimerUITests.swift; sourceTree = "<group>"; };
 		DB96053B2A1EFD4800BDB49A /* Interval_TimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval_TimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DB9605492A1EFF6F00BDB49A /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		DB96051C2A1EFD4700BDB49A /* Interval Timer */ = {
 			isa = PBXGroup;
 			children = (
+				DB9605482A1EFF4400BDB49A /* Models */,
 				DB96051D2A1EFD4700BDB49A /* Interval_TimerApp.swift */,
 				DB96051F2A1EFD4700BDB49A /* ContentView.swift */,
 				DB9605212A1EFD4800BDB49A /* Assets.xcassets */,
@@ -127,6 +130,14 @@
 				DB96053B2A1EFD4800BDB49A /* Interval_TimerUITestsLaunchTests.swift */,
 			);
 			path = "Interval TimerUITests";
+			sourceTree = "<group>";
+		};
+		DB9605482A1EFF4400BDB49A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB9605492A1EFF6F00BDB49A /* IntervalTimer.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 			files = (
 				DB9605202A1EFD4700BDB49A /* ContentView.swift in Sources */,
 				DB96051E2A1EFD4700BDB49A /* Interval_TimerApp.swift in Sources */,
+				DB96054A2A1EFF6F00BDB49A /* IntervalTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,21 @@
 import XCTest
 
 final class Interval_TimerTests: XCTestCase {
+	
+	func testIntervalTimerInitTitleDefault() {
+		// Test that IntervalTimer initializes proper default title values
+		let intervalTimer = IntervalTimer()
+		
+		XCTAssertEqual(intervalTimer.getTitle(), "Title")
+	}
+	
+	func testIntervalTimerInitTitleDefined() {
+		// Test that IntervalTimer initializes proper defined title values
+		let title = "Test"
+		let intervalTimer = IntervalTimer(title)
+		
+		XCTAssertEqual(intervalTimer.getTitle(), title)
+	}
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
