@@ -14,17 +14,15 @@ public struct IntervalTimer: CustomStringConvertible {
 	 >>> var intervalTimer = IntervalTimer()
 	 >>> print(intervalTimer)
 	 "Interval Timer with 1 Interval"
-	 >>> intervalTimer.getAutoContinue()
-	 False
-	 >>> intervalTimer.getIntervals()
+	 >>> intervalTimer.autoContinue
+	 false
+	 >>> intervalTimer.intervals
 	 [Interval]
-	 >>> intervalTimer.getTitle()
+	 >>> intervalTimer.title
 	 "Timer"
-	 >>> intervalTimer.toggleAutoContinue()
-	 >>> intervalTimer.setAutoContinue(True)
-	 >>> intervalTimer.addInterval()
-	 >>> intervalTimer.setIntervals([Interval(), Interval()]
-	 >>> intervalTimer.setTitle(title: "Test")
+	 >>> intervalTimer.autoContinue = true
+	 >>> intervalTimer.intervals = [Interval(), Interval()]
+	 >>> intervalTimer.title = "Title"
 	 
 	 === Attributes ===
 	 autoContinue: Whether the timer will automatically continue to the next interval after each interval elapses
@@ -44,24 +42,14 @@ public struct IntervalTimer: CustomStringConvertible {
 		return "Interval Timer with \(numIntervals) Interval\(suffix)"
 	}
 	let id = UUID()
-	// Change to [Interval] once Interval has been implemented
+	// TODO: Change to [Interval] once Interval has been implemented
 	var intervals: Array<Any>
 	var title: String
 	
-	init(autoContinue: Bool = true, intervals: Array<Any> = [], title: String = "Timer") {
-		// Creates a new IntervalTimer with given <title>, default 'Timer'
+	init(autoContinue: Bool = false, intervals: Array<Any> = [], title: String = "Timer") {
+		// Creates a new IntervalTimer with given <autoContinue>, default true; <intervals>, default empty; and <title>, default 'Timer'
 		self.autoContinue = autoContinue
 		self.intervals = intervals
 		self.title = title
-	}
-	
-	mutating func setTitle(title: String) {
-		// Changes self.title to <title>
-		self.title = title
-	}
-		
-	func getTitle() -> String {
-		// Returns self.title
-		return self.title
 	}
 }

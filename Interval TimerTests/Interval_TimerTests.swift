@@ -9,29 +9,41 @@ import XCTest
 
 final class Interval_TimerTests: XCTestCase {
 	
-	func testIntervalTimerDescriptionEmpty() {
-		// Test that IntervalTimer has proper String representation when empty
+	func testIntervalTimerInitDefault() {
+		// Test that IntervalTimer initializes proper default values
 		let intervalTimer = IntervalTimer()
-		let str = String(describing: intervalTimer)
 		
-		XCTAssertEqual(str, "Interval Timer with 0 Intervals")
+		XCTAssertEqual(intervalTimer.autoContinue, false)
+		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 0 Intervals")
+		XCTAssert(intervalTimer.intervals.isEmpty)
+		XCTAssertEqual(intervalTimer.title, "Timer")
 	}
 	
+	func testIntervalTimerInitAutoContinue() {
+		// Test that IntervalTimer properly initializes autoContinue
+		let intervalTimer = IntervalTimer(autoContinue: true)
+		
+		XCTAssert(intervalTimer.autoContinue)
+	}
+	
+	// TODO: When Interval is implemented
 	func testIntervalTimerDescriptionOneInterval() {
 		// Test that IntervalTimer has proper String representation when it has one interval
-		// TODO: When Interval is implemented
 	}
 	
+	// TODO: When Interval is implemented
 	func testIntervalTimerDescriptionMultipleIntervals() {
 		// Test that IntervalTimer has proper String representation when empty
-		// TODO: When Interval is implemented
 	}
 	
-	func testIntervalTimerInitTitleDefault() {
-		// Test that IntervalTimer initializes proper default title values
-		let intervalTimer = IntervalTimer()
-		
-		XCTAssertEqual(intervalTimer.getTitle(), "Timer")
+	// TODO: When Interval is implemented
+	func testIntervalTimerInitIntervalsOneInterval() {
+		// Test that IntervalTimer correctly initializes with one interval
+	}
+	
+	// TODO: When Interval is implemented
+	func testIntervalTimerInitIntervalsMultipleIntervals() {
+		// Test that IntervalTimer correctly initializes with proper indexing
 	}
 	
 	func testIntervalTimerInitTitleDefined() {
@@ -39,18 +51,9 @@ final class Interval_TimerTests: XCTestCase {
 		let title = "Test"
 		let intervalTimer = IntervalTimer(title: title)
 		
-		XCTAssertEqual(intervalTimer.getTitle(), title)
+		XCTAssertEqual(intervalTimer.title, title)
 	}
-	
-	func testIntervalTimerSetTitle() {
-		// Test that IntervalTimer.setTitle correctly changes self.title
-		let title = "Test"
-		var intervalTimer = IntervalTimer()
-		intervalTimer.setTitle(title: title)
 		
-		XCTAssertEqual(intervalTimer.getTitle(), title)
-	}
-	
 	override func setUpWithError() throws {
 		// Put setup code here. This method is called before the invocation of each test method in the class.
 	}
