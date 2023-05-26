@@ -9,6 +9,9 @@ import XCTest
 
 final class Interval_TimerTests: XCTestCase {
 	
+	/*
+	 TESTING INTERVAL
+	 */
 	func testIntervalInitDefault() {
 		// Test that Interval initializes proper default values
 		let interval = _Interval()
@@ -52,6 +55,9 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssertEqual(interval.index, 0)
 	}
 	
+	/*
+	 TESTING INTERVALTIMER
+	 */
 	func testIntervalTimerInitDefault() {
 		// Test that IntervalTimer initializes proper default values
 		let intervalTimer = IntervalTimer()
