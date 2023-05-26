@@ -118,6 +118,30 @@ final class Interval_TimerTests: XCTestCase {
 	func testIntervalTimerStartAlreadyInProgress() {
 		// Test that IntervalTimer.start() does nothing if already in progress
 	}
+	
+	func testIntervalTimerPause() {
+		// Test that IntervalTimer.pause() correctly pauses the timer and sets status to 3
+	}
+	
+	func testIntervalTimerPauseAlreadyPaused() {
+		// Test that IntervalTimer.pause() does nothing if already paused
+	}
+	
+	func testIntervalTimerReset() {
+		// Test that IntervalTimer.reset() correctly resets the timer, status, and current interval
+	}
+	
+	func testIntervalTimerResetWhenNotStarted() {
+		// Test that IntervalTimer.reset() does nothing if timer is not started
+	}
+	
+	func testIntervalTimerNextInterval() {
+		// Test that IntervalTimer.nextInterval() advances the current interval while maintaining play/pause status
+	}
+	
+	func testIntervalTimerNextIntervalLastInterval() {
+		// Test that IntervalTimer.nextInterval() ends the timer when on the last interval
+	}
 		
 	override func setUpWithError() throws {
 		// Put setup code here. This method is called before the invocation of each test method in the class.

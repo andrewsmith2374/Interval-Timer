@@ -37,6 +37,8 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	 >>> intervalTimer.nextInterval()
 	 >>> intervalTimer.currentInterval
 	 1
+	 >>> intervalTimer.isLastInterval()
+	 true
 	 >>> intervalTimer.pause()
 	 >>> intervalTimer.status
 	 2
@@ -80,8 +82,12 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		self._initializeIntervals()
 	}
 	
+	mutating func endTimer() {
+		// End this timer if currently running
+	}
+	
 	private mutating func _initializeIntervals() {
-		// Assigns indexes to each interval
+		// Assign indexes to each interval
 		var i: Int = 0
 		for _ in self.intervals {
 			intervals[i].index = i
@@ -89,32 +95,37 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		}
 	}
 	
+	mutating func nextInterval() {
+		// Move this timer to the next interval, preserving play/pause state and iterating self.currentInterval
+	}
+	
+	mutating func pause() {
+		// Pause this timer if running, changing self.status to 2
+	}
+	
+	mutating func reset() {
+		// Reset this timer, changing self.status and self.currentInterval to 0
+	}
+	
 	mutating func start() {
-		// Starts this timer if not currently running, changing self.status to 1
+		// Start this timer if not currently running, changing self.status to 1
 		if self.status != 0 {
 			return
 		}
 	}
 	
-	mutating func pause() {
-		// Pauses this timer if running, changing self.status to 2
-	}
-	
-	mutating func reset() {
-		// Resets this timer, changing self.status and self.currentInterval to 0
-	}
-	
-	mutating func nextInterval() {
-		// Moves this timer to the next interval, preserving play/pause state and iterating self.currentInterval
-	}
-	
 	func getCurrentIntervalDuration() -> TimeInterval {
-		// Returns the current interval's duration in seconds
+		// Return the current interval's duration in seconds
 		return 0.0
 	}
 	
 	func getCurrentIntervalTimeLeft() -> TimeInterval {
-		// Returns the amount of time remaining on the current interval in seconds
+		// Return the amount of time remaining on the current interval in seconds
 		return 0.0
+	}
+	
+	func isLastInterval() -> Bool {
+		// Return whether the current interval is the last one in this timer
+		return false
 	}
 }
