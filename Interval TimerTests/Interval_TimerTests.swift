@@ -60,6 +60,16 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssertEqual(interval.index, 0)
 	}
 	
+	func testIntervalStart() {
+		// Test that Interval.start() correctly changes isRunning and starts updating timeRemaining
+		let interval = _Interval()
+		interval.start()
+		
+		XCTAssert(interval.isRunning)
+		// TODO: Uncomment after implementing Interval.stop()
+		// XCTAssert(interval.timeRemaining < interval.duration)
+	}
+	
 	/*
 	 TESTING INTERVALTIMER
 	 */

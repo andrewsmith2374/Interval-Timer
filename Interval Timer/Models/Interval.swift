@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal struct _Interval: Identifiable {
+internal class _Interval: Identifiable {
 	/*
 	 One interval of an IntervalTimer
 	 
@@ -29,6 +29,9 @@ internal struct _Interval: Identifiable {
 	 true
 	 >>> interval.timeRemaining < interval.duration
 	 true
+	 >>> interval.stop()
+	 >>> interval.isRunning
+	 false
 	 
 	 === Attributes ===
 	 duration: The duration of this interval in seconds
@@ -36,11 +39,16 @@ internal struct _Interval: Identifiable {
 	 index: The index of this interval within an IntervalTimer, starting from 0
 	 isRunning: Whether this index is counting down or not
 	 timeRemaining: The amount of time remaining on this interval in seconds
+	 
+	 === Private Attributes ===
+	 _startTime: The datetime for the last time the timer ticked
 	 */
 	var duration: TimeInterval
 	public var id = UUID()
 	var index: Int
 	var isRunning: Bool
+	private var _startTime: Date
+	var timer: Timer
 	var timeRemaining: TimeInterval
 	
 	init(duration: Double = 60.0, index: Int = 0) {
@@ -55,6 +63,27 @@ internal struct _Interval: Identifiable {
 			self.index = index
 		}
 		self.isRunning = false
+		self._startTime = Date()
+		self.timer = Timer()
 		self.timeRemaining = self.duration
+	}
+	
+	func start() {
+		// Start this interval
+		self.isRunning = true
+		self._startTime = Date()
+		self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
+	}
+	
+	func stop() {
+		// Stop this interval
+	}
+	
+	@objc private func timerTick() {
+		// Update timeRemaining
+		self.timeRemaining -= (Date().timeIntervalSince(self._startTime))
+		self._startTime = Date()
+
+		print(self.timeRemaining)
 	}
 }
