@@ -140,9 +140,20 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssertEqual(intervalTimer.title, title)
 	}
 	
+	func testIntervalTimerEndTimerNotStarted() {
+		// Test that IntervalTimer.endTimer() does nothing if timer has not been started
+		var intervalTimer = IntervalTimer()
+		intervalTimer.endTimer()
+		
+		XCTAssertEqual(intervalTimer.status, 0)
+	}
+	
 	func testIntervalTimerEndTimerWhilePaused() {
 		// Test that IntervalTimer.endTimer() sets each interval's remaining time to 0, sets the timer's current interval to the last one, and sets status to 3
+		// Indirectly tests IntervalTimer.start() and .pause()
 		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.start()
+		intervalTimer.pause()
 		intervalTimer.endTimer()
 		
 		for interval in intervalTimer.intervals {
@@ -155,6 +166,7 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testIntervalTimeEndTimerWhileRunning() {
 		// Test that IntervalTimer.endTimer() stops all intervals, sets interval's remaining time to 0, and sets status to 3
+		// Indirectly tests IntervalTimer.start() and .pause()
 		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
 		intervalTimer.start()
 		intervalTimer.endTimer()
