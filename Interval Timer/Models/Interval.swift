@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal class _Interval: Identifiable {
+internal class _Interval: Identifiable, ObservableObject {
 	/*
 	 One interval of an IntervalTimer
 	 
@@ -49,7 +49,7 @@ internal class _Interval: Identifiable {
 	var isRunning: Bool
 	private var _startTime: Date
 	var timer: Timer
-	var timeRemaining: TimeInterval
+	@Published var timeRemaining: TimeInterval
 	
 	init(duration: Double = 60.0, index: Int = 0) {
 		if duration < 0.0 {
@@ -77,6 +77,8 @@ internal class _Interval: Identifiable {
 	
 	func stop() {
 		// Stop this interval
+		self.timer.invalidate()
+		self.isRunning = false
 	}
 	
 	@objc private func timerTick() {

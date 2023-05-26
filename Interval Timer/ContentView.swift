@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+	@ObservedObject var interval: _Interval
+	
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+			Button("Start", action: interval.start)
+			
+			Button("Stop", action: interval.stop)
+			
+			Text(String(interval.timeRemaining))
         }
         .padding()
     }
@@ -21,6 +24,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+		ContentView(interval: _Interval(duration: 5.0))
     }
 }
