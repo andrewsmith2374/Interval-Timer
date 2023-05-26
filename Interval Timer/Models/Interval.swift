@@ -70,6 +70,9 @@ internal class _Interval: Identifiable, ObservableObject {
 	
 	func start() {
 		// Start this interval
+		if self.isRunning {
+			return
+		}
 		self.isRunning = true
 		self._startTime = Date()
 		self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
@@ -77,6 +80,9 @@ internal class _Interval: Identifiable, ObservableObject {
 	
 	func stop() {
 		// Stop this interval
+		if !self.isRunning {
+			return
+		}
 		self.timer.invalidate()
 		self.isRunning = false
 	}
