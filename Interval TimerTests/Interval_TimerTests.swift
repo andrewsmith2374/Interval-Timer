@@ -58,6 +58,20 @@ final class Interval_TimerTests: XCTestCase {
 	/*
 	 TESTING INTERVALTIMER
 	 */
+	func testIntervalTimerDescriptionOneInterval() {
+		// Test that IntervalTimer has proper String representation when it has one interval
+		let intervalTimer = IntervalTimer(intervals: [_Interval()])
+		
+		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 1 Interval")
+	}
+	
+	func testIntervalTimerDescriptionMultipleIntervals() {
+		// Test that IntervalTimer has proper String representation when empty
+		let intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval()])
+		
+		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 2 Intervals")
+	}
+	
 	func testIntervalTimerInitDefault() {
 		// Test that IntervalTimer initializes proper default values
 		let intervalTimer = IntervalTimer()
@@ -73,20 +87,6 @@ final class Interval_TimerTests: XCTestCase {
 		let intervalTimer = IntervalTimer(autoContinue: true)
 		
 		XCTAssert(intervalTimer.autoContinue)
-	}
-	
-	func testIntervalTimerDescriptionOneInterval() {
-		// Test that IntervalTimer has proper String representation when it has one interval
-		let intervalTimer = IntervalTimer(intervals: [_Interval()])
-		
-		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 1 Interval")
-	}
-	
-	func testIntervalTimerDescriptionMultipleIntervals() {
-		// Test that IntervalTimer has proper String representation when empty
-		let intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval()])
-		
-		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 2 Intervals")
 	}
 	
 	func testIntervalTimerInitIntervalsOneInterval() {
@@ -117,6 +117,42 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssertEqual(intervalTimer.title, title)
 	}
 	
+	func testIntervalTimerEndTimerWhilePaused() {
+		// Test that IntervalTimer.endTimer() sets each interval's remaining time to 0, sets the timer's current interval to the last one, and sets status to 3
+	}
+	
+	func testIntervalTimeEndTimerWhileRunning() {
+		// 
+	}
+	
+	func testIntervalTimerEndTimerLastInterval() {
+		// Test that IntervalTimer.endTimer() correctly ends the timer when on the last interval
+	}
+		
+	func testIntervalTimerNextInterval() {
+		// Test that IntervalTimer.nextInterval() advances the current interval while maintaining play/pause status and sets the previous interval's remaining time to 0
+	}
+	
+	func testIntervalTimerNextIntervalLastInterval() {
+		// Test that IntervalTimer.nextInterval() ends the timer when on the last interval and sets the last interval's remaining time to 0
+	}
+		
+	func testIntervalTimerPause() {
+		// Test that IntervalTimer.pause() correctly pauses the timer, sets status to 3, and stops the current interval's remaining time from counting down
+	}
+	
+	func testIntervalTimerPauseAlreadyPaused() {
+		// Test that IntervalTimer.pause() does nothing if already paused
+	}
+	
+	func testIntervalTimerReset() {
+		// Test that IntervalTimer.reset() correctly resets the timer, status, interval values, and current interval
+	}
+	
+	func testIntervalTimerResetWhenNotStarted() {
+		// Test that IntervalTimer.reset() does nothing if timer is not started
+	}
+	
 	func testIntervalTimerStart() {
 		// Test that IntervalTimer.start() correctly starts the first interval and sets status to 1
 	}
@@ -125,30 +161,6 @@ final class Interval_TimerTests: XCTestCase {
 		// Test that IntervalTimer.start() does nothing if already in progress
 	}
 	
-	func testIntervalTimerPause() {
-		// Test that IntervalTimer.pause() correctly pauses the timer and sets status to 3
-	}
-	
-	func testIntervalTimerPauseAlreadyPaused() {
-		// Test that IntervalTimer.pause() does nothing if already paused
-	}
-	
-	func testIntervalTimerReset() {
-		// Test that IntervalTimer.reset() correctly resets the timer, status, and current interval
-	}
-	
-	func testIntervalTimerResetWhenNotStarted() {
-		// Test that IntervalTimer.reset() does nothing if timer is not started
-	}
-	
-	func testIntervalTimerNextInterval() {
-		// Test that IntervalTimer.nextInterval() advances the current interval while maintaining play/pause status
-	}
-	
-	func testIntervalTimerNextIntervalLastInterval() {
-		// Test that IntervalTimer.nextInterval() ends the timer when on the last interval
-	}
-		
 	override func setUpWithError() throws {
 		// Put setup code here. This method is called before the invocation of each test method in the class.
 	}
