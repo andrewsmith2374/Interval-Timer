@@ -142,14 +142,47 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testIntervalTimerEndTimerWhilePaused() {
 		// Test that IntervalTimer.endTimer() sets each interval's remaining time to 0, sets the timer's current interval to the last one, and sets status to 3
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.endTimer()
+		
+		for interval in intervalTimer.intervals {
+			XCTAssert(!interval.isRunning)
+			XCTAssertEqual(interval.timeRemaining, 0.0)
+		}
+		XCTAssertEqual(intervalTimer.currentInterval, intervalTimer.intervals.count - 1)
+		XCTAssertEqual(intervalTimer.status, 3)
 	}
 	
 	func testIntervalTimeEndTimerWhileRunning() {
 		// Test that IntervalTimer.endTimer() stops all intervals, sets interval's remaining time to 0, and sets status to 3
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.start()
+		intervalTimer.endTimer()
+		
+		for interval in intervalTimer.intervals {
+			XCTAssert(!interval.isRunning)
+			XCTAssertEqual(interval.timeRemaining, 0.0)
+		}
+		XCTAssertEqual(intervalTimer.currentInterval, intervalTimer.intervals.count - 1)
+		XCTAssertEqual(intervalTimer.status, 3)
 	}
 	
 	func testIntervalTimerEndTimerLastInterval() {
 		// Test that IntervalTimer.endTimer() correctly ends the timer when on the last interval
+		// Indirectly tests IntervalTimer.nextInterval()
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		let numIntervals: Int = intervalTimer.intervals.count
+		for _ in 1...(numIntervals - 1) {
+			intervalTimer.nextInterval()
+		}
+		XCTAssertEqual(intervalTimer.currentInterval, numIntervals - 1)
+		intervalTimer.endTimer()
+		
+		for interval in intervalTimer.intervals {
+			XCTAssert(!interval.isRunning)
+			XCTAssertEqual(interval.timeRemaining, 0.0)
+		}
+		XCTAssertEqual(intervalTimer.status, 3)
 	}
 		
 	func testIntervalTimerNextInterval() {
