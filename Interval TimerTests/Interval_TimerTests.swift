@@ -18,13 +18,16 @@ final class Interval_TimerTests: XCTestCase {
 		
 		XCTAssertEqual(interval.duration, 60.0)
 		XCTAssertEqual(interval.index, 0)
+		XCTAssertEqual(interval.isRunning, false)
+		XCTAssertEqual(interval.timeRemaining, 60.0)
 	}
 	
 	func testIntervalInitDuration() {
-		// Test that Interval properly initializes duration
+		// Test that Interval properly initializes duration and timeRemaining
 		let interval = _Interval(duration: 2.0)
 		
 		XCTAssertEqual(interval.duration, 2.0)
+		XCTAssertEqual(interval.timeRemaining, 2.0)
 	}
 	
 	func testIntervalInitDurationNegative() {
@@ -32,6 +35,7 @@ final class Interval_TimerTests: XCTestCase {
 		let interval = _Interval(duration: -20.0)
 		
 		XCTAssertEqual(interval.duration, 0.0)
+		XCTAssertEqual(interval.timeRemaining, 0.0)
 	}
 	
 	func testIntervalInitDurationInt() {
@@ -39,6 +43,7 @@ final class Interval_TimerTests: XCTestCase {
 		let interval = _Interval(duration: 60)
 		
 		XCTAssertEqual(interval.duration, 60.0)
+		XCTAssertEqual(interval.timeRemaining, 60.0)
 	}
 	
 	func testIntervalInitIndex() {

@@ -32,7 +32,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	 0
 	 >>> intervalTimer.getCurrentIntervalDuration()
 	 60.0
-	 >>> intervalTimer.getCurrentIntervalTimeLeft()
+	 >>> intervalTimer.getCurrentIntervalTimeRemaining()
 	 59.0
 	 >>> intervalTimer.nextInterval()
 	 >>> intervalTimer.currentInterval
@@ -119,7 +119,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		return 0.0
 	}
 	
-	func getCurrentIntervalTimeLeft() -> TimeInterval {
+	func getCurrentIntervalTimeRemaining() -> TimeInterval {
 		// Return the amount of time remaining on the current interval in seconds
 		return 0.0
 	}
