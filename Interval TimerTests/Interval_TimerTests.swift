@@ -249,12 +249,73 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssertEqual(intervalTimer.status, 3)
 	}
 		
-	func testIntervalTimerNextInterval() {
-		// Test that IntervalTimer.nextInterval() advances the current interval while maintaining play/pause status and sets the previous interval's remaining time to 0
-	}
-	
 	func testIntervalTimerNextIntervalLastInterval() {
 		// Test that IntervalTimer.nextInterval() ends the timer when on the last interval and sets the last interval's remaining time to 0
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.currentInterval = 2
+		intervalTimer.nextInterval()
+		
+		XCTAssertEqual(intervalTimer.status, 3)
+		XCTAssertEqual(intervalTimer.currentInterval, 2)
+		XCTAssertEqual(intervalTimer.intervals[2].timeRemaining, 0)
+		XCTAssert(!intervalTimer.intervals[2].isRunning)
+	}
+	
+	func testIntervalTimerNextIntervalNotStarted() {
+		// Test that IntervalTimer.nextInterval() correctly advances the current interval when not started
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.nextInterval()
+		
+		XCTAssertEqual(intervalTimer.status, 0)
+		XCTAssertEqual(intervalTimer.currentInterval, 1)
+		XCTAssertEqual(intervalTimer.intervals[0].timeRemaining, 0.0)
+		XCTAssertEqual(intervalTimer.intervals[1].timeRemaining, intervalTimer.intervals[1].duration)
+		XCTAssert(!intervalTimer.intervals[0].isRunning)
+		XCTAssert(!intervalTimer.intervals[1].isRunning)
+	}
+	
+	func testIntervalTimerNextIntervalPaused() {
+		// Test that IntervalTimer.nextInterval() correctly advances the current interval when paused
+		// Indirectly tests IntervalTimer.start() and .pause()
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.start()
+		intervalTimer.pause()
+		intervalTimer.nextInterval()
+		
+		XCTAssertEqual(intervalTimer.status, 2)
+		XCTAssertEqual(intervalTimer.currentInterval, 1)
+		XCTAssertEqual(intervalTimer.intervals[0].timeRemaining, 0.0)
+		XCTAssertEqual(intervalTimer.intervals[1].timeRemaining, intervalTimer.intervals[1].duration)
+		XCTAssert(!intervalTimer.intervals[0].isRunning)
+		XCTAssert(!intervalTimer.intervals[1].isRunning)
+	}
+	
+	func testIntervalTimerNextIntervalStarted() {
+		// Test that IntervalTimer.nextInterval() advances the current interval while started and sets the previous interval's remaining time to 0
+		// Indirectly tests IntervalTimer.start()
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.start()
+		intervalTimer.nextInterval()
+		
+		XCTAssertEqual(intervalTimer.status, 1)
+		XCTAssertEqual(intervalTimer.currentInterval, 1)
+		XCTAssertEqual(intervalTimer.intervals[0].timeRemaining, 0.0)
+		XCTAssert(intervalTimer.intervals[1].timer.isValid)
+		XCTAssert(!intervalTimer.intervals[0].isRunning)
+		XCTAssert(intervalTimer.intervals[1].isRunning)
+	}
+	
+	func testIntervalTimerNextIntervalWhenEnded() {
+		// Test that IntervalTimer.nextInterval() does nothing if the timer has ended
+		// Indirectly tests IntervalTimer.endTimer()
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.endTimer()
+		intervalTimer.nextInterval()
+		
+		XCTAssertEqual(intervalTimer.status, 3)
+		XCTAssertEqual(intervalTimer.currentInterval, 2)
+		XCTAssertEqual(intervalTimer.intervals[2].timeRemaining, 0)
+		XCTAssert(!intervalTimer.intervals[2].isRunning)
 	}
 		
 	func testIntervalTimerPause() {
