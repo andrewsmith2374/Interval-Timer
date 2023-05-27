@@ -168,14 +168,14 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		return 0.0
 	}
 	
+	func getNumIntervals() -> Int {
+		// Return the number of intervals in this timer
+		return self.intervals.count
+	}
+
 	// TODO: Implement
 	func isLastInterval() -> Bool {
 		// Return whether the current interval is the last one in this timer
 		return false
-	}
-	
-	func getNumIntervals() -> Int {
-		// Return the number of intervals in this timer
-		return self.intervals.count
 	}
 }

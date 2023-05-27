@@ -60,7 +60,6 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssertEqual(interval.index, 0)
 	}
 	
-	// TODO: Update to check timeRemaining after IntervalTimer integration
 	func testIntervalStart() {
 		// Test that Interval.start() correctly changes isRunning and starts updating timeRemaining
 		let interval = _Interval()
@@ -469,15 +468,27 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testIntervalTimerGetCurrentIntervalDurationFirstInterval() {
 		// Test that IntervalTimer.getCurrentIntervalDuration() returns the correct interval's duration when on the first interval
+		let intervalTimer = IntervalTimer(intervals: [_Interval()])
+		
+		XCTAssertEqual(intervalTimer.getCurrentIntervalDuration(), intervalTimer.intervals[0].duration)
 	}
 	
 	func testIntervalTimerGetCurrentIntervalDurationSecondInterval() {
 		// Test that IntervalTimer.getCurrentIntervalDuration() returns the correct interval's duration when past the first interval and not started
 		// Indirectly tests IntervalTimer.nextInterval()
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.nextInterval()
+		
+		XCTAssertEqual(intervalTimer.getCurrentIntervalDuration(), intervalTimer.intervals[1].duration)
 	}
 	
 	func testIntervalTimerGetCurrentIntervalDurationWhilePlaying() {
 		// Test that IntervalTimer.getCurrentIntervalDuration() returns the correct interval's duration when playing
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.nextInterval()
+		intervalTimer.start()
+		
+		XCTAssertEqual(intervalTimer.getCurrentIntervalDuration(), intervalTimer.intervals[1].duration)
 	}
 	
 	override func setUpWithError() throws {
