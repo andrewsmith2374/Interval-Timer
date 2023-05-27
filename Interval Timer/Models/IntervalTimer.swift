@@ -135,6 +135,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		self.intervals[self.currentInterval].stop()
 	}
 	
+	// TODO: Implement
 	mutating func reset() {
 		// Reset this timer, changing self.status and self.currentInterval to 0
 	}
@@ -150,16 +151,19 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		self.intervals[self.currentInterval].start()
 	}
 	
+	// TODO: Implement
 	func getCurrentIntervalDuration() -> TimeInterval {
 		// Return the current interval's duration in seconds
 		return 0.0
 	}
 	
+	// TODO: Implement
 	func getCurrentIntervalTimeRemaining() -> TimeInterval {
 		// Return the amount of time remaining on the current interval in seconds
 		return 0.0
 	}
 	
+	// TODO: Implement
 	func isLastInterval() -> Bool {
 		// Return whether the current interval is the last one in this timer
 		return false
