@@ -38,16 +38,14 @@ internal class _Interval: Identifiable, ObservableObject {
 	 id: Unique identifier
 	 index: The index of this interval within an IntervalTimer, starting from 0
 	 isRunning: Whether this index is counting down or not
-	 timeRemaining: The amount of time remaining on this interval in seconds
-	 
-	 === Private Attributes ===
 	 _startTime: The datetime for the last time the timer ticked
+	 timeRemaining: The amount of time remaining on this interval in seconds
 	 */
 	var duration: TimeInterval
 	public var id = UUID()
 	var index: Int
 	var isRunning: Bool
-	private var _startTime: Date
+	internal var _startTime: Date
 	var timer: Timer
 	@Published var timeRemaining: TimeInterval
 	
@@ -75,7 +73,7 @@ internal class _Interval: Identifiable, ObservableObject {
 		}
 		self.isRunning = true
 		self._startTime = Date()
-		self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
+		self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self._timerTick), userInfo: nil, repeats: true)
 	}
 	
 	func stop() {
@@ -87,7 +85,7 @@ internal class _Interval: Identifiable, ObservableObject {
 		self.isRunning = false
 	}
 	
-	@objc private func timerTick() {
+	@objc internal func _timerTick() {
 		// Update timeRemaining and check if this interval has ended
 		self.timeRemaining -= (Date().timeIntervalSince(self._startTime))
 		if self.timeRemaining <= 0.0 {
@@ -95,7 +93,5 @@ internal class _Interval: Identifiable, ObservableObject {
 			return
 		}
 		self._startTime = Date()
-
-		print(self.timeRemaining)
 	}
 }

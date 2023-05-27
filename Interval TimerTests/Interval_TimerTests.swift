@@ -102,10 +102,32 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testIntervalTimerTick() {
 		// Test that Interval._timerTick() correctly counts down and ends automatically
+		let interval = _Interval()
+		
+		// Simulating Interval.start()
+		interval._startTime = Date()
+		sleep(1)
+		interval._timerTick()
+		
+		XCTAssert(interval.timeRemaining < interval.duration)
 	}
 	
 	func testIntervalTimerTickAfterStopping() {
 		// Test that Interval._timerTick() correclty works after stopping and restarting the timer
+		let interval = _Interval()
+		
+		// Simulating Interval.start()
+		interval._startTime = Date()
+		sleep(5)
+		interval._timerTick()
+		interval.stop()
+		sleep(5)
+		interval._startTime = Date()
+		sleep(5)
+		interval._timerTick()
+		
+		let lowerBoundRemaining = interval.duration - 10.1 // Requires deviation of no more than 0.1 seconds
+		XCTAssert(interval.timeRemaining > lowerBoundRemaining)
 	}
 	
 	/*
