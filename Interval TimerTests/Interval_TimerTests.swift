@@ -258,11 +258,25 @@ final class Interval_TimerTests: XCTestCase {
 	}
 		
 	func testIntervalTimerPause() {
-		// Test that IntervalTimer.pause() correctly pauses the timer, sets status to 3, and stops the current interval's remaining time from counting down
+		// Test that IntervalTimer.pause() correctly pauses the timer, sets status to 2, and stops the current interval's remaining time from counting down
+		// Indirectly tests IntervalTimer.start()
+		var intervalTimer = IntervalTimer(intervals: [_Interval()])
+		intervalTimer.start()
+		intervalTimer.pause()
+		
+		XCTAssert(intervalTimer.status == 2)
+		XCTAssertEqual(intervalTimer.currentInterval, 0)
+		XCTAssert(!intervalTimer.intervals[0].isRunning)
 	}
 	
 	func testIntervalTimerPauseAlreadyPaused() {
 		// Test that IntervalTimer.pause() does nothing if already paused
+		var intervalTimer = IntervalTimer(intervals: [_Interval()])
+		intervalTimer.pause()
+		
+		XCTAssert(intervalTimer.status == 2)
+		XCTAssertEqual(intervalTimer.currentInterval, 0)
+		XCTAssert(!intervalTimer.intervals[0].isRunning)
 	}
 	
 	func testIntervalTimerReset() {
@@ -279,8 +293,8 @@ final class Interval_TimerTests: XCTestCase {
 		intervalTimer.start()
 		
 		XCTAssertEqual(intervalTimer.status, 1)
-		XCTAssert(intervalTimer.intervals[0].isRunning)
 		XCTAssertEqual(intervalTimer.currentInterval, 0)
+		XCTAssert(intervalTimer.intervals[0].isRunning)
 	}
 	
 	func testIntervalTimerStartAlreadyInProgress() {
