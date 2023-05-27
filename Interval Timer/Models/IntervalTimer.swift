@@ -111,6 +111,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 			return
 		}
 		let numIntervals: Int = self.intervals.count
+		// TODO: Change to use internal method when self.isLastMethod() is implemented
 		let isLastInterval = self.currentInterval == numIntervals - 1
 		if isLastInterval {
 			self.endTimer()

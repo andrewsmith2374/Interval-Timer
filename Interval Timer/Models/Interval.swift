@@ -43,7 +43,7 @@ internal class _Interval: Identifiable, ObservableObject {
 	 */
 	let duration: TimeInterval
 	public var id = UUID()
-	let index: Int
+	var index: Int
 	var isRunning: Bool
 	internal var _startTime: Date
 	var timer: Timer
