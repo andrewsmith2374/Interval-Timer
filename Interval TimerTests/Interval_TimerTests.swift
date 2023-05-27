@@ -269,9 +269,22 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssert(!intervalTimer.intervals[0].isRunning)
 	}
 	
+	func testIntervalTimerPauseNotStarted() {
+		// Test that IntervalTimer.pause() does nothing if not started
+		var intervalTimer = IntervalTimer(intervals: [_Interval()])
+		intervalTimer.pause()
+		
+		XCTAssert(intervalTimer.status == 0)
+		XCTAssertEqual(intervalTimer.currentInterval, 0)
+		XCTAssert(!intervalTimer.intervals[0].isRunning)
+	}
+	
 	func testIntervalTimerPauseAlreadyPaused() {
 		// Test that IntervalTimer.pause() does nothing if already paused
+		// Indirectly tests IntervalTimer.start()
 		var intervalTimer = IntervalTimer(intervals: [_Interval()])
+		intervalTimer.start()
+		intervalTimer.pause()
 		intervalTimer.pause()
 		
 		XCTAssert(intervalTimer.status == 2)

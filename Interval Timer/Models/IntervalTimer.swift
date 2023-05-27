@@ -111,6 +111,12 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	
 	mutating func pause() {
 		// Pause this timer if running, changing self.status to 2
+		let validToPause: Bool = self.status == 1
+		if !validToPause {
+			return
+		}
+		self.status = 2
+		self.intervals[self.currentInterval].stop()
 	}
 	
 	mutating func reset() {
