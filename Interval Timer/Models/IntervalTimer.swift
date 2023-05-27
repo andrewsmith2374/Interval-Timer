@@ -92,8 +92,8 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		for i in 0...numIntervals - 1 {
 			self.intervals[i].stop()
 			self.intervals[i].timeRemaining = 0.0
-			self.currentInterval += 1
 		}
+		self.currentInterval = numIntervals - 1
 	}
 	
 	private mutating func _initializeIntervals() {
