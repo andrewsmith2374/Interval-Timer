@@ -87,11 +87,11 @@ public class Interval: Identifiable, ObservableObject {
 	
 	@objc internal func _timerTick() {
 		// Update timeRemaining and check if this interval has ended
-		self.timeRemaining -= (Date().timeIntervalSince(self._startTime))
 		if self.timeRemaining <= 0.0 {
 			self.stop()
 			return
 		}
+		self.timeRemaining -= (Date().timeIntervalSince(self._startTime))
 		self._startTime = Date()
 	}
 }
