@@ -168,7 +168,7 @@ final class Interval_TimerTests: XCTestCase {
 		// Test that IntervalTimer correctly initializes with one interval
 		let intervalTimer = IntervalTimer(intervals: [_Interval()])
 		
-		XCTAssertEqual(intervalTimer.intervals.count, 1)
+		XCTAssertEqual(intervalTimer.getNumIntervals(), 1)
 		XCTAssertEqual(intervalTimer.intervals[0].index, 0)
 	}
 	
@@ -212,7 +212,7 @@ final class Interval_TimerTests: XCTestCase {
 			XCTAssert(!interval.isRunning)
 			XCTAssertEqual(interval.timeRemaining, 0.0)
 		}
-		XCTAssertEqual(intervalTimer.currentInterval, intervalTimer.intervals.count - 1)
+		XCTAssertEqual(intervalTimer.currentInterval, intervalTimer.getNumIntervals() - 1)
 		XCTAssertEqual(intervalTimer.status, 3)
 	}
 	
@@ -227,7 +227,7 @@ final class Interval_TimerTests: XCTestCase {
 			XCTAssert(!interval.isRunning)
 			XCTAssertEqual(interval.timeRemaining, 0.0)
 		}
-		XCTAssertEqual(intervalTimer.currentInterval, intervalTimer.intervals.count - 1)
+		XCTAssertEqual(intervalTimer.currentInterval, intervalTimer.getNumIntervals() - 1)
 		XCTAssertEqual(intervalTimer.status, 3)
 	}
 	
@@ -235,11 +235,10 @@ final class Interval_TimerTests: XCTestCase {
 		// Test that IntervalTimer.endTimer() correctly ends the timer when on the last interval
 		// Indirectly tests IntervalTimer.nextInterval()
 		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
-		let numIntervals: Int = intervalTimer.intervals.count
-		for _ in 1...(numIntervals - 1) {
+		for _ in 1...(intervalTimer.getNumIntervals() - 1) {
 			intervalTimer.nextInterval()
 		}
-		XCTAssertEqual(intervalTimer.currentInterval, numIntervals - 1)
+		XCTAssertEqual(intervalTimer.currentInterval, intervalTimer.getNumIntervals() - 1)
 		intervalTimer.endTimer()
 		
 		for interval in intervalTimer.intervals {
@@ -247,6 +246,29 @@ final class Interval_TimerTests: XCTestCase {
 			XCTAssertEqual(interval.timeRemaining, 0.0)
 		}
 		XCTAssertEqual(intervalTimer.status, 3)
+	}
+	
+	func testIntervalTimerGetNumIntervalsNoIntervals() {
+		// Test that IntervalTimer.getNumIntervals() returns 0 when there are no intervals
+		let intervalTimer = IntervalTimer()
+		
+		XCTAssertEqual(intervalTimer.getNumIntervals(), 0)
+	}
+	
+	func testIntervalTimerGetNumIntervalsOneInterval() {
+		// Test that IntervalTimer.getNumIntervals() returns 1 when there is one interval
+		let intervalTimer = IntervalTimer(intervals: [_Interval()])
+		
+		XCTAssertEqual(intervalTimer.getNumIntervals(), 1)
+	}
+	
+	func testIntervalTimerGetNumIntervalsManyIntervals() {
+		// Test that IntervalTimer.getNumIntervals() works correctly when there are many intervals
+		let numIntervals: Int = 1000
+		let intervalList = Array(repeating: _Interval(), count: numIntervals)
+		let intervalTimer = IntervalTimer(intervals: intervalList)
+		
+		XCTAssertEqual(intervalTimer.getNumIntervals(), numIntervals)
 	}
 		
 	func testIntervalTimerNextIntervalLastInterval() {

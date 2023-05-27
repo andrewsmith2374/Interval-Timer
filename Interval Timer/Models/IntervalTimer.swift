@@ -58,13 +58,12 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	var currentInterval: Int
 	public var description: String {
 		var suffix: String
-		let numIntervals: Int = intervals.count
-		if numIntervals == 1 {
+		if self.getNumIntervals() == 1 {
 			suffix = ""
 		} else {
 			suffix = "s"
 		}
-		return "Interval Timer with \(numIntervals) Interval\(suffix)"
+		return "Interval Timer with \(self.getNumIntervals()) Interval\(suffix)"
 	}
 	public let id = UUID()
 	var intervals: [_Interval]
@@ -92,8 +91,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 			interval.stop()
 			interval.timeRemaining = 0.0
 		}
-		let numIntervals: Int = self.intervals.count
-		self.currentInterval = numIntervals - 1
+		self.currentInterval = self.getNumIntervals() - 1
 	}
 	
 	private mutating func _initializeIntervals() {
@@ -110,9 +108,8 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		if self.status == 3 {
 			return
 		}
-		let numIntervals: Int = self.intervals.count
 		// TODO: Change to use internal method when self.isLastMethod() is implemented
-		let isLastInterval = self.currentInterval == numIntervals - 1
+		let isLastInterval = self.currentInterval == self.getNumIntervals() - 1
 		if isLastInterval {
 			self.endTimer()
 		}
@@ -136,7 +133,6 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		self.intervals[self.currentInterval].stop()
 	}
 	
-	// TODO: Implement
 	mutating func reset() {
 		// Reset this timer, changing self.status and self.currentInterval to 0
 		if self.status == 0 {
@@ -152,8 +148,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	
 	mutating func start() {
 		// Start this timer if not currently running, changing self.status to 1
-		let numIntervals: Int = self.intervals.count
-		let validToStart: Bool = self.status % 2 == 0 && numIntervals > 0
+		let validToStart: Bool = self.status % 2 == 0 && self.getNumIntervals() > 0
 		if !validToStart {
 			return
 		}
@@ -177,5 +172,10 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	func isLastInterval() -> Bool {
 		// Return whether the current interval is the last one in this timer
 		return false
+	}
+	
+	func getNumIntervals() -> Int {
+		// Return the number of intervals in this timer
+		return self.intervals.count
 	}
 }
