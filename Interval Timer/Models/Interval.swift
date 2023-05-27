@@ -38,9 +38,12 @@ public class Interval: Identifiable, ObservableObject {
 	 id: Unique identifier
 	 index: The index of this interval within an IntervalTimer, starting from 0
 	 isRunning: Whether this index is counting down or not
-	 _startTime: The datetime for the last time the timer ticked
 	 timeRemaining: The amount of time remaining on this interval in seconds
+
+	 === Private Attributes ===
+	 _startTime: The datetime for the last time the timer ticked
 	 */
+	// TODO: Add description
 	let duration: TimeInterval
 	public var id = UUID()
 	var index: Int
