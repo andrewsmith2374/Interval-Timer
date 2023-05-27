@@ -139,6 +139,15 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	// TODO: Implement
 	mutating func reset() {
 		// Reset this timer, changing self.status and self.currentInterval to 0
+		if self.status == 0 {
+			return
+		}
+		self.status = 0
+		for interval in self.intervals {
+			interval.stop()
+			interval.timeRemaining = interval.duration
+		}
+		self.currentInterval = 0
 	}
 	
 	mutating func start() {
