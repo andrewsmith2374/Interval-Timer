@@ -41,9 +41,9 @@ internal class _Interval: Identifiable, ObservableObject {
 	 _startTime: The datetime for the last time the timer ticked
 	 timeRemaining: The amount of time remaining on this interval in seconds
 	 */
-	var duration: TimeInterval
+	let duration: TimeInterval
 	public var id = UUID()
-	var index: Int
+	let index: Int
 	var isRunning: Bool
 	internal var _startTime: Date
 	var timer: Timer

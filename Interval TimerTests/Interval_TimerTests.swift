@@ -353,12 +353,69 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssert(!intervalTimer.intervals[0].isRunning)
 	}
 	
-	func testIntervalTimerReset() {
-		// Test that IntervalTimer.reset() correctly resets the timer, status, interval values, and current interval
+	func testIntervalTimerResetWhenEnded() {
+		// Test that IntervalTimer.reset() correctly resets the timer, status, interval values, and current interval when ended
+		// Indirectly tests IntervalTimer.endTimer()
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.endTimer()
+		intervalTimer.reset()
+		
+		XCTAssertEqual(intervalTimer.status, 0)
+		XCTAssertEqual(intervalTimer.currentInterval, 0)
+		for interval in intervalTimer.intervals {
+			XCTAssert(!interval.isRunning)
+			XCTAssertEqual(interval.timeRemaining, interval.duration)
+			XCTAssert(!interval.timer.isValid)
+		}
+	}
+	
+	func testIntervalTimerResetWhenPaused() {
+		// Test that IntervalTimer.reset() correctly resets the timer, status, interval values, and current interval when paused
+		// Indirectly tests IntervalTimer.start(), .nextInterval(), and pause()
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.start()
+		intervalTimer.nextInterval()
+		intervalTimer.pause()
+		intervalTimer.reset()
+		
+		XCTAssertEqual(intervalTimer.status, 0)
+		XCTAssertEqual(intervalTimer.currentInterval, 0)
+		for interval in intervalTimer.intervals {
+			XCTAssert(!interval.isRunning)
+			XCTAssertEqual(interval.timeRemaining, interval.duration)
+			XCTAssert(!interval.timer.isValid)
+		}
+	}
+	
+	func testIntervalTimerResetWhenStarted() {
+		// Test that IntervalTimer.reset() correctly resets the timer, status, interval values, and current interval when started
+		// Indirectly tests IntervalTimer.start() and .nextInterval()
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.start()
+		intervalTimer.nextInterval()
+		intervalTimer.reset()
+		
+		XCTAssertEqual(intervalTimer.status, 0)
+		XCTAssertEqual(intervalTimer.currentInterval, 0)
+		for interval in intervalTimer.intervals {
+			XCTAssert(!interval.isRunning)
+			XCTAssertEqual(interval.timeRemaining, interval.duration)
+			XCTAssert(!interval.timer.isValid)
+		}
 	}
 	
 	func testIntervalTimerResetWhenNotStarted() {
 		// Test that IntervalTimer.reset() does nothing if timer is not started
+		var intervalTimer = IntervalTimer(intervals: [_Interval(), _Interval(), _Interval()])
+		intervalTimer.reset()
+
+		XCTAssertEqual(intervalTimer.status, 0)
+		XCTAssertEqual(intervalTimer.currentInterval, 0)
+		for interval in intervalTimer.intervals {
+			XCTAssert(!interval.isRunning)
+			XCTAssertEqual(interval.timeRemaining, interval.duration)
+			XCTAssert(!interval.timer.isValid)
+		}
 	}
 	
 	func testIntervalTimerStart() {
