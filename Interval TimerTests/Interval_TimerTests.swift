@@ -67,6 +67,7 @@ final class Interval_TimerTests: XCTestCase {
 		interval.start()
 
 		XCTAssert(interval.isRunning)
+		XCTAssert(interval.timer.isValid)
 	}
 	
 	func testIntervalStartAlreadyRunning() {
@@ -76,6 +77,35 @@ final class Interval_TimerTests: XCTestCase {
 		interval.start()
 		
 		XCTAssert(interval.isRunning)
+		XCTAssert(interval.timer.isValid)
+	}
+	
+	func testIntervalStop() {
+		// Test that Interval.stop() correctly stops the timer and sets isRunning to false
+		// Indirectly tests Interval.start()
+		let interval = _Interval()
+		interval.start()
+		interval.stop()
+		
+		XCTAssert(!interval.isRunning)
+		XCTAssert(!interval.timer.isValid)
+	}
+	
+	func testIntervalStopWhileStopped() {
+		// Test that Interval.stop() does nothing if already stopped
+		let interval = _Interval()
+		interval.stop()
+		
+		XCTAssert(!interval.isRunning)
+		XCTAssert(!interval.timer.isValid)
+	}
+	
+	func testIntervalTimerTick() {
+		// Test that Interval._timerTick() correctly counts down and ends automatically
+	}
+	
+	func testIntervalTimerTickAfterStopping() {
+		// Test that Interval._timerTick() correclty works after stopping and restarting the timer
 	}
 	
 	/*
