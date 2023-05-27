@@ -66,11 +66,11 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		return "Interval Timer with \(self.getNumIntervals()) Interval\(suffix)"
 	}
 	public let id = UUID()
-	var intervals: [_Interval]
+	var intervals: [Interval]
 	var status: Int
 	var title: String
 	
-	init(autoContinue: Bool = false, intervals: [_Interval] = [], title: String = "Timer") {
+	init(autoContinue: Bool = false, intervals: [Interval] = [], title: String = "Timer") {
 		// Creates a new IntervalTimer with given <autoContinue>, default true; <intervals>, default empty; and <title>, default 'Timer'
 		self.autoContinue = autoContinue
 		self.currentInterval = 0

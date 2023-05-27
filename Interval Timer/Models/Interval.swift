@@ -7,11 +7,11 @@
 
 import Foundation
 
-internal class _Interval: Identifiable, ObservableObject {
+public class Interval: Identifiable, ObservableObject {
 	/*
 	 One interval of an IntervalTimer
 	 
-	 >>> interval = _Interval()
+	 >>> interval = Interval()
 	 >>> print(interval)
 	 Interval of duration 60.0 seconds
 	 >>> interval.duration

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-	@ObservedObject var interval: _Interval
+	@ObservedObject var interval: Interval
 	
     var body: some View {
         VStack {
@@ -24,6 +24,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-		ContentView(interval: _Interval(duration: 5.0))
+		ContentView(interval: Interval(duration: 5.0))
     }
 }

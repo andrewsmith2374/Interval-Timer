@@ -11,7 +11,7 @@ import SwiftUI
 struct Interval_TimerApp: App {
     var body: some Scene {
         WindowGroup {
-			ContentView(interval: _Interval())
+			ContentView(interval: Interval())
         }
     }
 }
