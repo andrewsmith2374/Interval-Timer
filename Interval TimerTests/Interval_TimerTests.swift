@@ -223,10 +223,29 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testIntervalTimerStart() {
 		// Test that IntervalTimer.start() correctly starts the first interval and sets status to 1
+		var intervalTimer = IntervalTimer(intervals: [_Interval()])
+		intervalTimer.start()
+		
+		XCTAssertEqual(intervalTimer.status, 1)
+		XCTAssert(intervalTimer.intervals[0].isRunning)
+		XCTAssertEqual(intervalTimer.currentInterval, 0)
 	}
 	
 	func testIntervalTimerStartAlreadyInProgress() {
 		// Test that IntervalTimer.start() does nothing if already in progress
+		var intervalTimer = IntervalTimer(intervals: [_Interval()])
+		intervalTimer.start()
+		intervalTimer.start()
+		
+		XCTAssertEqual(intervalTimer.status, 1)
+		XCTAssert(intervalTimer.intervals[0].isRunning)
+		XCTAssertEqual(intervalTimer.currentInterval, 0)
+	}
+	
+	func testIntervalTimerStartNoIntervals() {
+		// Test that IntervalTimer.start() does nothing if there are no intervals
+		var intervalTimer = IntervalTimer()
+		intervalTimer.start()
 	}
 	
 	func testIntervalTimerGetCurrentIntervalDurationFirstInterval() {

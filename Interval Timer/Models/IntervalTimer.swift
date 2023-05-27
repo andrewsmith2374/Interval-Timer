@@ -89,7 +89,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		}
 		self.status = 3
 		let numIntervals: Int = self.intervals.count
-		for i in 0...numIntervals {
+		for i in 0...numIntervals - 1 {
 			self.intervals[i].stop()
 			self.intervals[i].timeRemaining = 0.0
 			self.currentInterval += 1
@@ -119,9 +119,13 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	
 	mutating func start() {
 		// Start this timer if not currently running, changing self.status to 1
-		if self.status != 0 {
+		let numIntervals: Int = self.intervals.count
+		let validToStart: Bool = self.status % 2 == 0 && numIntervals > 0
+		if !validToStart {
 			return
 		}
+		self.status = 1
+		self.intervals[self.currentInterval].start()
 	}
 	
 	func getCurrentIntervalDuration() -> TimeInterval {
