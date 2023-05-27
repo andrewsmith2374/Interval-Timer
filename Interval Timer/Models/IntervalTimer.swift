@@ -84,15 +84,15 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	
 	mutating func endTimer() {
 		// End this timer if currently running
-		if self.status == 0 {
+		if self.status == 3 {
 			return
 		}
 		self.status = 3
-		let numIntervals: Int = self.intervals.count
-		for i in 0...numIntervals - 1 {
-			self.intervals[i].stop()
-			self.intervals[i].timeRemaining = 0.0
+		for interval in self.intervals {
+			interval.stop()
+			interval.timeRemaining = 0.0
 		}
+		let numIntervals: Int = self.intervals.count
 		self.currentInterval = numIntervals - 1
 	}
 	
@@ -107,6 +107,22 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	
 	mutating func nextInterval() {
 		// Move this timer to the next interval, preserving play/pause state and iterating self.currentInterval
+		if self.status == 3 {
+			return
+		}
+		let numIntervals: Int = self.intervals.count
+		let isLastInterval = self.currentInterval == numIntervals - 1
+		if isLastInterval {
+			self.endTimer()
+		}
+		
+		self.intervals[self.currentInterval].stop()
+		self.intervals[self.currentInterval].timeRemaining = 0.0
+		self.currentInterval += 1
+		
+		if self.status == 1 {
+			self.intervals[currentInterval].start()
+		}
 	}
 	
 	mutating func pause() {

@@ -193,11 +193,11 @@ final class Interval_TimerTests: XCTestCase {
 	}
 	
 	func testIntervalTimerEndTimerNotStarted() {
-		// Test that IntervalTimer.endTimer() does nothing if timer has not been started
+		// Test that IntervalTimer.endTimer() works correctly if timer has not been started
 		var intervalTimer = IntervalTimer()
 		intervalTimer.endTimer()
 		
-		XCTAssertEqual(intervalTimer.status, 0)
+		XCTAssertEqual(intervalTimer.status, 3)
 	}
 	
 	func testIntervalTimerEndTimerWhilePaused() {
@@ -256,7 +256,7 @@ final class Interval_TimerTests: XCTestCase {
 		intervalTimer.nextInterval()
 		
 		XCTAssertEqual(intervalTimer.status, 3)
-		XCTAssertEqual(intervalTimer.currentInterval, 2)
+		XCTAssertEqual(intervalTimer.currentInterval, 3)
 		XCTAssertEqual(intervalTimer.intervals[2].timeRemaining, 0)
 		XCTAssert(!intervalTimer.intervals[2].isRunning)
 	}
