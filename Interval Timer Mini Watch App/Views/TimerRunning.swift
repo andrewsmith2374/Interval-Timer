@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct TimerRunning: View {
-	var timer: IntervalTimer
+	var interface: TimerInterface
 	
     var body: some View {
 		VStack {
-			Text(timer.title)
+			Text(interface.timer.title)
+			
+			Button("Reset", action: interface.resetTimer)
 		}
     }
 }
 
 struct TimerRunning_Previews: PreviewProvider {
     static var previews: some View {
-		TimerRunning(timer: IntervalTimer(intervals: [Interval(duration: 5.0), Interval(duration: 5.0), Interval(duration: 5.0)]))
+		let timer = IntervalTimer(intervals: [Interval(duration: 5.0), Interval(duration: 5.0), Interval(duration: 5.0)])
+		
+		TimerRunning(interface: TimerInterface(timer: timer))
     }
 }

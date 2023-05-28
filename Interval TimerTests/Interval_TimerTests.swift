@@ -282,6 +282,18 @@ final class Interval_TimerTests: XCTestCase {
 		}
 	}
 	
+	func testTimerInterfaceInit() {
+		let timer = IntervalTimer()
+		let interface = TimerInterface(timer: timer)
+		
+		XCTAssert(interface.timer.getCurrentInterval().isRunning)
+		XCTAssertEqual(interface.timer, timer)
+	}
+	
+	func testTimerInterfaceResetTimer() {
+		
+	}
+	
 	override func setUpWithError() throws {
 		// Put setup code here. This method is called before the invocation of each test method in the class.
 	}
