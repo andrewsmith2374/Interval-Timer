@@ -99,7 +99,6 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 			interval.stop()
 			interval.timeRemaining = interval.duration
 		}
-		self._currentInterval = 0
 	}
 	
 	// TODO: Implement

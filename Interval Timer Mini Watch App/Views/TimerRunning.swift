@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct TimerRunning: View {
+	var timer: IntervalTimer
+	
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		VStack {
+			Text(timer.title)
+		}
     }
 }
 
 struct TimerRunning_Previews: PreviewProvider {
     static var previews: some View {
-        TimerRunning()
+		TimerRunning(timer: IntervalTimer(intervals: [Interval(duration: 5.0), Interval(duration: 5.0), Interval(duration: 5.0)]))
     }
 }
