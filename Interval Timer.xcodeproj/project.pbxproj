@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		DB820FD92A1F511B00C1C660 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
 		DB820FDA2A1F511B00C1C660 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
+		DB87851B2A230CA900A0DAFA /* Interval_Timer_MiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87851A2A230CA900A0DAFA /* Interval_Timer_MiniApp.swift */; };
+		DB87851D2A230CA900A0DAFA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87851C2A230CA900A0DAFA /* ContentView.swift */; };
+		DB87851F2A230CAA00A0DAFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB87851E2A230CAA00A0DAFA /* Assets.xcassets */; };
+		DB8785222A230CAA00A0DAFA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8785212A230CAA00A0DAFA /* Preview Assets.xcassets */; };
+		DB87852C2A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87852B2A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppTests.swift */; };
+		DB8785362A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785352A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppUITests.swift */; };
+		DB8785382A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785372A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppUITestsLaunchTests.swift */; };
+		DB87853B2A230CAA00A0DAFA /* Interval Timer Mini Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DB8785182A230CA900A0DAFA /* Interval Timer Mini Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DB8785462A230CBE00A0DAFA /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
+		DB8785472A230CD300A0DAFA /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9605492A1EFF6F00BDB49A /* IntervalTimer.swift */; };
+		DB87854A2A230D2F00A0DAFA /* TimerRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785492A230D2F00A0DAFA /* TimerRunning.swift */; };
 		DB96051E2A1EFD4700BDB49A /* Interval_TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96051D2A1EFD4700BDB49A /* Interval_TimerApp.swift */; };
 		DB9605202A1EFD4700BDB49A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96051F2A1EFD4700BDB49A /* ContentView.swift */; };
 		DB9605222A1EFD4800BDB49A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9605212A1EFD4800BDB49A /* Assets.xcassets */; };
@@ -21,6 +32,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DB8785282A230CAA00A0DAFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9605122A1EFD4700BDB49A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB8785172A230CA900A0DAFA;
+			remoteInfo = "Interval Timer Mini Watch App";
+		};
+		DB8785322A230CAA00A0DAFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9605122A1EFD4700BDB49A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB8785172A230CA900A0DAFA;
+			remoteInfo = "Interval Timer Mini Watch App";
+		};
+		DB8785392A230CAA00A0DAFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9605122A1EFD4700BDB49A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB8785172A230CA900A0DAFA;
+			remoteInfo = "Interval Timer Mini Watch App";
+		};
 		DB96052C2A1EFD4800BDB49A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DB9605122A1EFD4700BDB49A /* Project object */;
@@ -37,8 +69,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DB87853F2A230CAA00A0DAFA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DB87853B2A230CAA00A0DAFA /* Interval Timer Mini Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DB820FD82A1F511B00C1C660 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
+		DB8785182A230CA900A0DAFA /* Interval Timer Mini Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Timer Mini Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB87851A2A230CA900A0DAFA /* Interval_Timer_MiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval_Timer_MiniApp.swift; sourceTree = "<group>"; };
+		DB87851C2A230CA900A0DAFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DB87851E2A230CAA00A0DAFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB8785212A230CAA00A0DAFA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DB8785272A230CAA00A0DAFA /* Interval Timer Mini Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Interval Timer Mini Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB87852B2A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval_Timer_Mini_Watch_AppTests.swift; sourceTree = "<group>"; };
+		DB8785312A230CAA00A0DAFA /* Interval Timer Mini Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Interval Timer Mini Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8785352A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval_Timer_Mini_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		DB8785372A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval_Timer_Mini_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DB8785492A230D2F00A0DAFA /* TimerRunning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRunning.swift; sourceTree = "<group>"; };
 		DB96051A2A1EFD4700BDB49A /* Interval Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB96051D2A1EFD4700BDB49A /* Interval_TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval_TimerApp.swift; sourceTree = "<group>"; };
 		DB96051F2A1EFD4700BDB49A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +111,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DB8785152A230CA900A0DAFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8785242A230CAA00A0DAFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB87852E2A230CAA00A0DAFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9605172A1EFD4700BDB49A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,12 +156,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB8785192A230CA900A0DAFA /* Interval Timer Mini Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				DB8785482A230CFA00A0DAFA /* Views */,
+				DB87851A2A230CA900A0DAFA /* Interval_Timer_MiniApp.swift */,
+				DB87851C2A230CA900A0DAFA /* ContentView.swift */,
+				DB87851E2A230CAA00A0DAFA /* Assets.xcassets */,
+				DB8785202A230CAA00A0DAFA /* Preview Content */,
+			);
+			path = "Interval Timer Mini Watch App";
+			sourceTree = "<group>";
+		};
+		DB8785202A230CAA00A0DAFA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DB8785212A230CAA00A0DAFA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DB87852A2A230CAA00A0DAFA /* Interval Timer Mini Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB87852B2A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppTests.swift */,
+			);
+			path = "Interval Timer Mini Watch AppTests";
+			sourceTree = "<group>";
+		};
+		DB8785342A230CAA00A0DAFA /* Interval Timer Mini Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB8785352A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppUITests.swift */,
+				DB8785372A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "Interval Timer Mini Watch AppUITests";
+			sourceTree = "<group>";
+		};
+		DB8785482A230CFA00A0DAFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB8785492A230D2F00A0DAFA /* TimerRunning.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DB9605112A1EFD4700BDB49A = {
 			isa = PBXGroup;
 			children = (
 				DB96051C2A1EFD4700BDB49A /* Interval Timer */,
 				DB96052E2A1EFD4800BDB49A /* Interval TimerTests */,
 				DB9605382A1EFD4800BDB49A /* Interval TimerUITests */,
+				DB8785192A230CA900A0DAFA /* Interval Timer Mini Watch App */,
+				DB87852A2A230CAA00A0DAFA /* Interval Timer Mini Watch AppTests */,
+				DB8785342A230CAA00A0DAFA /* Interval Timer Mini Watch AppUITests */,
 				DB96051B2A1EFD4700BDB49A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +220,9 @@
 				DB96051A2A1EFD4700BDB49A /* Interval Timer.app */,
 				DB96052B2A1EFD4800BDB49A /* Interval TimerTests.xctest */,
 				DB9605352A1EFD4800BDB49A /* Interval TimerUITests.xctest */,
+				DB8785182A230CA900A0DAFA /* Interval Timer Mini Watch App.app */,
+				DB8785272A230CAA00A0DAFA /* Interval Timer Mini Watch AppTests.xctest */,
+				DB8785312A230CAA00A0DAFA /* Interval Timer Mini Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,6 +277,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DB8785172A230CA900A0DAFA /* Interval Timer Mini Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB87853C2A230CAA00A0DAFA /* Build configuration list for PBXNativeTarget "Interval Timer Mini Watch App" */;
+			buildPhases = (
+				DB8785142A230CA900A0DAFA /* Sources */,
+				DB8785152A230CA900A0DAFA /* Frameworks */,
+				DB8785162A230CA900A0DAFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Interval Timer Mini Watch App";
+			productName = "Interval Timer Mini Watch App";
+			productReference = DB8785182A230CA900A0DAFA /* Interval Timer Mini Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB8785262A230CAA00A0DAFA /* Interval Timer Mini Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8785402A230CAA00A0DAFA /* Build configuration list for PBXNativeTarget "Interval Timer Mini Watch AppTests" */;
+			buildPhases = (
+				DB8785232A230CAA00A0DAFA /* Sources */,
+				DB8785242A230CAA00A0DAFA /* Frameworks */,
+				DB8785252A230CAA00A0DAFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB8785292A230CAA00A0DAFA /* PBXTargetDependency */,
+			);
+			name = "Interval Timer Mini Watch AppTests";
+			productName = "Interval Timer Mini Watch AppTests";
+			productReference = DB8785272A230CAA00A0DAFA /* Interval Timer Mini Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB8785302A230CAA00A0DAFA /* Interval Timer Mini Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8785432A230CAA00A0DAFA /* Build configuration list for PBXNativeTarget "Interval Timer Mini Watch AppUITests" */;
+			buildPhases = (
+				DB87852D2A230CAA00A0DAFA /* Sources */,
+				DB87852E2A230CAA00A0DAFA /* Frameworks */,
+				DB87852F2A230CAA00A0DAFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB8785332A230CAA00A0DAFA /* PBXTargetDependency */,
+			);
+			name = "Interval Timer Mini Watch AppUITests";
+			productName = "Interval Timer Mini Watch AppUITests";
+			productReference = DB8785312A230CAA00A0DAFA /* Interval Timer Mini Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		DB9605192A1EFD4700BDB49A /* Interval Timer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB96053F2A1EFD4800BDB49A /* Build configuration list for PBXNativeTarget "Interval Timer" */;
@@ -155,10 +337,12 @@
 				DB9605162A1EFD4700BDB49A /* Sources */,
 				DB9605172A1EFD4700BDB49A /* Frameworks */,
 				DB9605182A1EFD4700BDB49A /* Resources */,
+				DB87853F2A230CAA00A0DAFA /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB87853A2A230CAA00A0DAFA /* PBXTargetDependency */,
 			);
 			name = "Interval Timer";
 			productName = "Interval Timer";
@@ -211,6 +395,17 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					DB8785172A230CA900A0DAFA = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					DB8785262A230CAA00A0DAFA = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = DB8785172A230CA900A0DAFA;
+					};
+					DB8785302A230CAA00A0DAFA = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = DB8785172A230CA900A0DAFA;
+					};
 					DB9605192A1EFD4700BDB49A = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -240,11 +435,37 @@
 				DB9605192A1EFD4700BDB49A /* Interval Timer */,
 				DB96052A2A1EFD4800BDB49A /* Interval TimerTests */,
 				DB9605342A1EFD4800BDB49A /* Interval TimerUITests */,
+				DB8785172A230CA900A0DAFA /* Interval Timer Mini Watch App */,
+				DB8785262A230CAA00A0DAFA /* Interval Timer Mini Watch AppTests */,
+				DB8785302A230CAA00A0DAFA /* Interval Timer Mini Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DB8785162A230CA900A0DAFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8785222A230CAA00A0DAFA /* Preview Assets.xcassets in Resources */,
+				DB87851F2A230CAA00A0DAFA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8785252A230CAA00A0DAFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB87852F2A230CAA00A0DAFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9605182A1EFD4700BDB49A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,6 +492,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DB8785142A230CA900A0DAFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB87854A2A230D2F00A0DAFA /* TimerRunning.swift in Sources */,
+				DB8785472A230CD300A0DAFA /* IntervalTimer.swift in Sources */,
+				DB87851D2A230CA900A0DAFA /* ContentView.swift in Sources */,
+				DB87851B2A230CA900A0DAFA /* Interval_Timer_MiniApp.swift in Sources */,
+				DB8785462A230CBE00A0DAFA /* Interval.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8785232A230CAA00A0DAFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB87852C2A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB87852D2A230CAA00A0DAFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8785382A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppUITestsLaunchTests.swift in Sources */,
+				DB8785362A230CAA00A0DAFA /* Interval_Timer_Mini_Watch_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DB9605162A1EFD4700BDB49A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,6 +554,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DB8785292A230CAA00A0DAFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB8785172A230CA900A0DAFA /* Interval Timer Mini Watch App */;
+			targetProxy = DB8785282A230CAA00A0DAFA /* PBXContainerItemProxy */;
+		};
+		DB8785332A230CAA00A0DAFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB8785172A230CA900A0DAFA /* Interval Timer Mini Watch App */;
+			targetProxy = DB8785322A230CAA00A0DAFA /* PBXContainerItemProxy */;
+		};
+		DB87853A2A230CAA00A0DAFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB8785172A230CA900A0DAFA /* Interval Timer Mini Watch App */;
+			targetProxy = DB8785392A230CAA00A0DAFA /* PBXContainerItemProxy */;
+		};
 		DB96052D2A1EFD4800BDB49A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DB9605192A1EFD4700BDB49A /* Interval Timer */;
@@ -317,6 +582,151 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		DB87853D2A230CAA00A0DAFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Interval Timer Mini Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 8YFJF4TF38;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Interval Timer Mini";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "andrewsmith2374.Interval-Timer";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "andrewsmith2374.Interval-Timer.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		DB87853E2A230CAA00A0DAFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Interval Timer Mini Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 8YFJF4TF38;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Interval Timer Mini";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "andrewsmith2374.Interval-Timer";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "andrewsmith2374.Interval-Timer.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
+		DB8785412A230CAA00A0DAFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8YFJF4TF38;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "andrewsmith2374.Interval-Timer-Mini-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Interval Timer Mini Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Interval Timer Mini Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		DB8785422A230CAA00A0DAFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8YFJF4TF38;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "andrewsmith2374.Interval-Timer-Mini-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Interval Timer Mini Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Interval Timer Mini Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
+		DB8785442A230CAA00A0DAFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8YFJF4TF38;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "andrewsmith2374.Interval-Timer-Mini-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Interval Timer Mini Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		DB8785452A230CAA00A0DAFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8YFJF4TF38;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "andrewsmith2374.Interval-Timer-Mini-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Interval Timer Mini Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
 		DB96053D2A1EFD4800BDB49A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -429,6 +839,7 @@
 		DB9605402A1EFD4800BDB49A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Interval Timer/Interval_Timer.entitlements";
@@ -469,6 +880,7 @@
 		DB9605412A1EFD4800BDB49A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Interval Timer/Interval_Timer.entitlements";
@@ -599,6 +1011,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DB87853C2A230CAA00A0DAFA /* Build configuration list for PBXNativeTarget "Interval Timer Mini Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB87853D2A230CAA00A0DAFA /* Debug */,
+				DB87853E2A230CAA00A0DAFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8785402A230CAA00A0DAFA /* Build configuration list for PBXNativeTarget "Interval Timer Mini Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8785412A230CAA00A0DAFA /* Debug */,
+				DB8785422A230CAA00A0DAFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8785432A230CAA00A0DAFA /* Build configuration list for PBXNativeTarget "Interval Timer Mini Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8785442A230CAA00A0DAFA /* Debug */,
+				DB8785452A230CAA00A0DAFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DB9605152A1EFD4700BDB49A /* Build configuration list for PBXProject "Interval Timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
