@@ -7,13 +7,13 @@
 
 import Foundation
 
-public class Interval: Identifiable, ObservableObject {
+public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
 	/*
 	 One interval of an IntervalTimer
 	 
 	 >>> interval = Interval()
 	 >>> print(interval)
-	 Interval of duration 60.0 seconds
+	 Interval of 60.0 seconds
 	 >>> interval.duration
 	 60.0
 	 >>> interval.index
@@ -34,6 +34,7 @@ public class Interval: Identifiable, ObservableObject {
 	 false
 	 
 	 === Attributes ===
+	 description: String representation of this interval
 	 duration: The duration of this interval in seconds
 	 id: Unique identifier
 	 index: The index of this interval within an IntervalTimer, starting from 0
@@ -43,7 +44,15 @@ public class Interval: Identifiable, ObservableObject {
 	 === Private Attributes ===
 	 _startTime: The datetime for the last time the timer ticked
 	 */
-	// TODO: Add description
+	public var description: String {
+		var suffix: String
+		if self.duration == 1 {
+			suffix = ""
+		} else {
+			suffix = "s"
+		}
+		return "Interval of \(self.duration) second\(suffix)"
+	}
 	let duration: TimeInterval
 	public var id = UUID()
 	var index: Int

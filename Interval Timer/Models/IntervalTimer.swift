@@ -37,6 +37,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	 
 	 === Attributes ===
 	 autoContinue: Whether the timer will automatically continue to the next interval after each interval elapses
+	 description: String representation of this timer
 	 id: Unique identifier
 	 intervals: A list of each interval contained in this timer
 	 title: The title of this timer
@@ -84,6 +85,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		let isLastInterval = self._currentInterval == self.getNumIntervals() - 1
 		if isLastInterval {
 			self.reset()
+			return
 		}
 		
 		self.intervals[self._currentInterval].stop()

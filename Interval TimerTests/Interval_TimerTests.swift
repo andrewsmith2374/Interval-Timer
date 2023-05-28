@@ -16,6 +16,7 @@ final class Interval_TimerTests: XCTestCase {
 		// Test that Interval initializes proper default values
 		let interval = Interval()
 		
+		XCTAssertEqual(String(describing: interval), "Interval of 60.0 seconds")
 		XCTAssertEqual(interval.duration, 60.0)
 		XCTAssertEqual(interval.index, 0)
 		XCTAssertEqual(interval.isRunning, false)
@@ -58,6 +59,20 @@ final class Interval_TimerTests: XCTestCase {
 		let interval = Interval(index: -1)
 		
 		XCTAssertEqual(interval.index, 0)
+	}
+	
+	func testIntervalDescriptionOneSecond() {
+		// Test that Interval has correct description when duration is one second
+		let interval = Interval(duration: 1.0)
+		
+		XCTAssertEqual(String(describing: interval), "Interval of 1.0 second")
+	}
+	
+	func testIntervalDescriptionMultipleSeconds() {
+		// Test that Interval has correct description when duration is not one second
+		let interval = Interval(duration: 10.0)
+		
+		XCTAssertEqual(String(describing: interval), "Interval of 10.0 seconds")
 	}
 	
 	func testIntervalStart() {
@@ -132,20 +147,6 @@ final class Interval_TimerTests: XCTestCase {
 	/*
 	 TESTING INTERVALTIMER
 	 */
-	func testIntervalTimerDescriptionOneInterval() {
-		// Test that IntervalTimer has proper String representation when it has one interval
-		let intervalTimer = IntervalTimer(intervals: [Interval()])
-		
-		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 1 Interval")
-	}
-	
-	func testIntervalTimerDescriptionMultipleIntervals() {
-		// Test that IntervalTimer has proper String representation when empty
-		let intervalTimer = IntervalTimer(intervals: [Interval(), Interval()])
-		
-		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 2 Intervals")
-	}
-	
 	func testIntervalTimerInitDefault() {
 		// Test that IntervalTimer initializes proper default values
 		let intervalTimer = IntervalTimer()
@@ -192,6 +193,20 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssertEqual(intervalTimer.title, title)
 	}
 		
+	func testIntervalTimerDescriptionOneInterval() {
+		// Test that IntervalTimer has proper String representation when it has one interval
+		let intervalTimer = IntervalTimer(intervals: [Interval()])
+		
+		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 1 Interval")
+	}
+	
+	func testIntervalTimerDescriptionMultipleIntervals() {
+		// Test that IntervalTimer has proper String representation when empty
+		let intervalTimer = IntervalTimer(intervals: [Interval(), Interval()])
+		
+		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 2 Intervals")
+	}
+	
 	func testIntervalTimerGetNumIntervalsNoIntervals() {
 		// Test that IntervalTimer.getNumIntervals() returns 0 when there are no intervals
 		let intervalTimer = IntervalTimer()
