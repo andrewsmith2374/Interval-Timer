@@ -80,7 +80,7 @@ public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
 	
 	func start() {
 		// Start this interval
-		if self.isRunning {
+		if self.isRunning || self.timeRemaining <= 0.0 {
 			return
 		}
 		self.isRunning = true
@@ -103,7 +103,7 @@ public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
 			self.stop()
 			return
 		}
-		self.timeRemaining -= (Date().timeIntervalSince(self._startTime))
+		self.timeRemaining = max(self.timeRemaining - (Date().timeIntervalSince(self._startTime)), 0.0)
 		self._startTime = Date()
 	}
 }
