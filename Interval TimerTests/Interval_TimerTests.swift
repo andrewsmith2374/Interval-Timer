@@ -207,6 +207,32 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 2 Intervals")
 	}
 	
+	func testIntervalTimerGetCurrentIntervalFirstInterval() {
+		// Test that IntervalTimer.getCurrentInterval() works when on first interval
+		let intervalTimer = IntervalTimer(intervals: [Interval(), Interval(), Interval()])
+		
+		XCTAssertEqual(intervalTimer.getCurrentInterval().id, intervalTimer.intervals[0].id)
+	}
+	
+	func testIntervalTimerGetCurrentIntervalSecondInterva() {
+		// Test that IntervalTimer.getCurrentInterval() works when on second interval
+		// Indirectly tests IntervalTimer.nextInterval()
+		var intervalTimer = IntervalTimer(intervals: [Interval(), Interval(), Interval()])
+		intervalTimer.nextInterval()
+		
+		XCTAssertEqual(intervalTimer.getCurrentInterval().id, intervalTimer.intervals[1].id)
+	}
+	
+	func testIntervalTimerGetCurrentIntervalLadstInterva() {
+		// Test that IntervalTimer.getCurrentInterval() works when on last interval
+		// Indirectly tests IntervalTimer.nextInterval()
+		var intervalTimer = IntervalTimer(intervals: [Interval(), Interval(), Interval()])
+		intervalTimer.nextInterval()
+		intervalTimer.nextInterval()
+
+		XCTAssertEqual(intervalTimer.getCurrentInterval().id, intervalTimer.intervals[2].id)
+	}
+
 	func testIntervalTimerGetNumIntervalsNoIntervals() {
 		// Test that IntervalTimer.getNumIntervals() returns 0 when there are no intervals
 		let intervalTimer = IntervalTimer()
