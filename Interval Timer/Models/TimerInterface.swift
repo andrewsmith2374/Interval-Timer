@@ -31,6 +31,7 @@ public class TimerInterface: Identifiable {
 	
 	func nextInterval() {
 		// Move this timer to the next interval
+		self.timer.nextInterval()
 	}
 
 	func resetTimer() {
