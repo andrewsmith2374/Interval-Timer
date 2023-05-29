@@ -310,7 +310,7 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testTimerInterfaceInit() {
 		// Test that TimerInterface initializes proper default values
-		let timer = IntervalTimer()
+		let timer = IntervalTimer(intervals: [Interval()])
 		let interface = TimerInterface(timer: timer)
 		
 		XCTAssert(!interface.timer.getCurrentInterval().isRunning)
