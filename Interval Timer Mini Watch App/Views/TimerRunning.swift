@@ -14,9 +14,17 @@ struct TimerRunning: View {
 		VStack {
 			Text(interface.timer.title)
 			
+			IntervalView(interval: interface.timer.getCurrentInterval())
+			
+			Button("Skip", action: nextInterval)
+			
 			Button("Reset", action: interface.resetTimer)
 		}
     }
+	
+	func nextInterval() {
+		// Move the timer to the next interval
+	}
 }
 
 struct TimerRunning_Previews: PreviewProvider {
