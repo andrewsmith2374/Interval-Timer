@@ -283,15 +283,37 @@ final class Interval_TimerTests: XCTestCase {
 	}
 	
 	func testTimerInterfaceInit() {
+		// Test that TimerInterface initializes proper default values
 		let timer = IntervalTimer()
 		let interface = TimerInterface(timer: timer)
 		
-		XCTAssert(interface.timer.getCurrentInterval().isRunning)
-		XCTAssertEqual(interface.timer, timer)
+		XCTAssert(!interface.timer.getCurrentInterval().isRunning)
+		XCTAssertEqual(interface.timer.id, timer.id)
 	}
 	
-	func testTimerInterfaceResetTimer() {
+	func testTimerInterfaceResetTimerIntervalRunning() {
+		// Test that TimerInterface.resetTimer() causes its timer to reset its intervals
+		// Indirectly tests Interval.start() and IntervalTimer.getCurrentInterval()
+		let timer = IntervalTimer(intervals: [Interval()])
+		let interface = TimerInterface(timer: timer)
+		// TODO: Replace with Timer.getCurrentInterval() when implemented
+		interface.timer.intervals[0].start()
+		interface.resetTimer()
 		
+		XCTAssert(!interface.timer.intervals[0].isRunning)
+		XCTAssertEqual(interface.timer.intervals[0].timeRemaining, interface.timer.intervals[0].duration)
+	}
+	
+	func testTimerInterfaceResetTimerSecondInterval() {
+		// Test that TimerInterface.resetTimer() causes its timer to reset its current interval
+		// Indirectly tests IntervalTimer.nextInterval() and IntervalTimer.getCurrentInterval()
+		let timer = IntervalTimer(intervals: [Interval(), Interval()])
+		let interface = TimerInterface(timer: timer)
+		// TODO: Replace with Timer.getCurrentInterval() when implemented
+		interface.timer.nextInterval()
+		interface.resetTimer()
+		
+		XCTAssertEqual(interface.timer._currentInterval, 0)
 	}
 	
 	override func setUpWithError() throws {
