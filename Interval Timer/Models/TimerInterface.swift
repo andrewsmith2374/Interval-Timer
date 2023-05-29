@@ -29,6 +29,10 @@ public class TimerInterface: Identifiable {
 		self.timer = timer
 	}
 	
+	func nextInterval() {
+		// Move this timer to the next interval
+	}
+
 	func resetTimer() {
 		// Reset this interface's timer
 		self.timer.reset()
