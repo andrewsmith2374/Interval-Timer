@@ -349,6 +349,26 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssertEqual(interface.timer.id, timer.id)
 	}
 	
+	func testTimerInterfaceNextInterval() {
+		// Test that TimerInterface.nextInterval() causes its timer to move to the next interval
+		let timer = IntervalTimer(intervals: [Interval(), Interval(), Interval()])
+		let interface = TimerInterface(timer: timer)
+		interface.nextInterval()
+		
+		XCTAssertEqual(interface.timer.getCurrentInterval().index, 1)
+	}
+	
+	func testTimerInterfaceNextIntervalLastInterval() {
+		// Test that TimerInterface.nextInterval() causes its timer to move to the next interval while on the last one
+		let timer = IntervalTimer(intervals: [Interval(), Interval(), Interval()])
+		let interface = TimerInterface(timer: timer)
+		interface.timer.nextInterval()
+		interface.timer.nextInterval()
+		interface.nextInterval()
+		
+		XCTAssertEqual(interface.timer.getCurrentInterval().index, 2)
+	}
+	
 	func testTimerInterfaceResetTimerIntervalRunning() {
 		// Test that TimerInterface.resetTimer() causes its timer to reset its intervals
 		// Indirectly tests Interval.start() and IntervalTimer.getCurrentInterval()
