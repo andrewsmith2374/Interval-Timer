@@ -322,20 +322,18 @@ final class Interval_TimerTests: XCTestCase {
 		// Indirectly tests Interval.start() and IntervalTimer.getCurrentInterval()
 		let timer = IntervalTimer(intervals: [Interval()])
 		let interface = TimerInterface(timer: timer)
-		// TODO: Replace with Timer.getCurrentInterval() when implemented
-		interface.timer.intervals[0].start()
+		interface.timer.getCurrentInterval().start()
 		interface.resetTimer()
 		
-		XCTAssert(!interface.timer.intervals[0].isRunning)
-		XCTAssertEqual(interface.timer.intervals[0].timeRemaining, interface.timer.intervals[0].duration)
+		XCTAssert(!interface.timer.getCurrentInterval().isRunning)
+		XCTAssertEqual(interface.timer.getCurrentInterval().timeRemaining, interface.timer.getCurrentInterval().duration)
 	}
 	
 	func testTimerInterfaceResetTimerSecondInterval() {
 		// Test that TimerInterface.resetTimer() causes its timer to reset its current interval
-		// Indirectly tests IntervalTimer.nextInterval() and IntervalTimer.getCurrentInterval()
+		// Indirectly tests IntervalTimer.nextInterval()
 		let timer = IntervalTimer(intervals: [Interval(), Interval()])
 		let interface = TimerInterface(timer: timer)
-		// TODO: Replace with Timer.getCurrentInterval() when implemented
 		interface.timer.nextInterval()
 		interface.resetTimer()
 		

@@ -103,7 +103,6 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		self._currentInterval = 0
 	}
 	
-	// TODO: Implement
 	func getCurrentInterval() -> Interval {
 		// Return the current interval
 		return self.intervals[self._currentInterval]
