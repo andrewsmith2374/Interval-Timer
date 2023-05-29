@@ -16,7 +16,7 @@ final class Interval_TimerTests: XCTestCase {
 		// Test that Interval initializes proper default values
 		let interval = Interval()
 		
-		XCTAssertEqual(String(describing: interval), "Interval of 60.0 seconds")
+		XCTAssertEqual(String(describing: interval), "Interval 1")
 		XCTAssertEqual(interval.duration, 60.0)
 		XCTAssertEqual(interval.index, 0)
 		XCTAssertEqual(interval.isRunning, false)
@@ -61,20 +61,13 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssertEqual(interval.index, 0)
 	}
 	
-	func testIntervalDescriptionOneSecond() {
+	func testIntervalDescriptionIndex1() {
 		// Test that Interval has correct description when duration is one second
-		let interval = Interval(duration: 1.0)
+		let interval = Interval(index: 1)
 		
-		XCTAssertEqual(String(describing: interval), "Interval of 1.0 second")
+		XCTAssertEqual(String(describing: interval), "Interval 2")
 	}
-	
-	func testIntervalDescriptionMultipleSeconds() {
-		// Test that Interval has correct description when duration is not one second
-		let interval = Interval(duration: 10.0)
 		
-		XCTAssertEqual(String(describing: interval), "Interval of 10.0 seconds")
-	}
-	
 	func testIntervalStart() {
 		// Test that Interval.start() correctly changes isRunning and starts updating timeRemaining
 		let interval = Interval()

@@ -24,6 +24,8 @@ struct TimerRunning: View {
 	
 	func nextInterval() {
 		// Move the timer to the next interval
+		interface.timer.nextInterval()
+		interface.timer.getCurrentInterval().start()
 	}
 }
 

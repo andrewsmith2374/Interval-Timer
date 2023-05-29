@@ -12,6 +12,8 @@ struct IntervalView: View {
 	
     var body: some View {
 		VStack {
+			Text(String(describing: interval))
+			
 			Text(String(interval.duration))
 			
 			Text(String(roundToTenths(interval.timeRemaining)))
