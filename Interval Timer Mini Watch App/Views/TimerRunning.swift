@@ -15,8 +15,14 @@ struct TimerRunning: View {
 			Text(interface.timer.title)
 			
 			IntervalView(interval: interface.timer.getCurrentInterval())
-
+			
 			Button("Skip", action: nextInterval)
+			
+			if interface.timer.getCurrentInterval().isRunning {
+				Button("Pause", action: interface.timer.getCurrentInterval().stop)
+			} else {
+				Button("Resume", action: interface.timer.getCurrentInterval().start)
+			}
 			
 			Button("Reset", action: interface.resetTimer)
 		}

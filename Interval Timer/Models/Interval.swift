@@ -50,7 +50,7 @@ public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
 	let duration: TimeInterval
 	public var id = UUID()
 	var index: Int
-	var isRunning: Bool
+	@Published var isRunning: Bool
 	internal var _startTime: Date
 	var timer: Timer
 	@Published var timeRemaining: TimeInterval

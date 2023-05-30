@@ -61,6 +61,15 @@ final class Interval_TimerTests: XCTestCase {
 		XCTAssertEqual(interval.index, 0)
 	}
 	
+	func testIntervalDescriptionChangesWithIndex() {
+		// Test that Interval's string representation changes when its index changes
+		var interval = Interval()
+		XCTAssertEqual(String(describing: interval), "Interval 1")
+		
+		interval.index = 1
+		XCTAssertEqual(String(describing: interval), "Interval 2")
+	}
+	
 	func testIntervalDescriptionIndex1() {
 		// Test that Interval has correct description when duration is one second
 		let interval = Interval(index: 1)
