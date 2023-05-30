@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct TimerRunning: View {
-	var interface: TimerInterface
-	
-    var body: some View {
+	@ObservedObject var interface: TimerInterface
+
+	var body: some View {
 		VStack {
 			Text(interface.timer.title)
 			
 			IntervalView(interval: interface.timer.getCurrentInterval())
-			
+
 			Button("Skip", action: nextInterval)
 			
 			Button("Reset", action: interface.resetTimer)
@@ -24,7 +24,7 @@ struct TimerRunning: View {
 	
 	func nextInterval() {
 		// Move the timer to the next interval
-		interface.timer.nextInterval()
+		interface.nextInterval()
 		interface.timer.getCurrentInterval().start()
 	}
 }

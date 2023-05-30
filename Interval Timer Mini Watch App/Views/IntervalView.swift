@@ -21,13 +21,14 @@ struct IntervalView: View {
 			.onAppear(perform: interval.start)
     }
 	
-	func roundToTenths(_ x : Double) -> Double {
+	private func roundToTenths(_ x : Double) -> Double {
 		return Double((x * 10.0).rounded() / 10)
 	}
 }
 
 struct IntervalView_Previews: PreviewProvider {
     static var previews: some View {
-		IntervalView(interval: Interval(duration: 5.0))
+		@State var interval = Interval(duration: 5.0)
+		IntervalView(interval: interval)
     }
 }

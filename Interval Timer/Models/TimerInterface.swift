@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class TimerInterface: Identifiable {
+public class TimerInterface: Identifiable, ObservableObject {
 	/*
 	 An interface between a Swift view and an IntervalTimer object
 	 
@@ -23,7 +23,7 @@ public class TimerInterface: Identifiable {
 	 timer: The timer this interface provides access to
 	 */
 	public let id = UUID()
-	var timer: IntervalTimer
+	@Published var timer: IntervalTimer
 	
 	init(timer: IntervalTimer) {
 		self.timer = timer
