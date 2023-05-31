@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct TimerList: View {
-	var timers: Array<IntervalTimer>
+	var timers: [IntervalTimer]
 
     var body: some View {
-		VStack {
+		NavigationStack {
 			ForEach(timers) {
 				timer in NavigationLink {
 					TimerRunning(interface: TimerInterface(timer: timer))

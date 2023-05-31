@@ -20,9 +20,10 @@ struct TimerRunning: View {
 			
 			PauseButton(interval: interface.timer.getCurrentInterval())
 			
-			Button("Reset", action: interface.resetTimer)
+			// Button("Reset", action: interface.resetTimer)
 		}
 		.onAppear(perform: interface.timer.getCurrentInterval().start)
+		.onDisappear(perform: interface.resetTimer)
     }
 	
 	func nextInterval() {
