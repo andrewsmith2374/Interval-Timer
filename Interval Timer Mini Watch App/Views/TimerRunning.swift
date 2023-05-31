@@ -18,11 +18,7 @@ struct TimerRunning: View {
 			
 			Button("Skip", action: nextInterval)
 			
-			if interface.timer.getCurrentInterval().isRunning {
-				Button("Pause", action: interface.timer.getCurrentInterval().stop)
-			} else {
-				Button("Resume", action: interface.timer.getCurrentInterval().start)
-			}
+			PauseButton(interval: interface.timer.getCurrentInterval())
 			
 			Button("Reset", action: interface.resetTimer)
 		}
