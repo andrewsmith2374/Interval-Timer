@@ -14,9 +14,9 @@ struct TimerList: View {
 		VStack {
 			ForEach(timers) {
 				timer in NavigationLink {
-					IntervalView(interval: Interval())
+					TimerRunning(interface: TimerInterface(timer: timer))
 				} label: {
-					PauseButton(interval: Interval())
+					TimerRow(timer: timer)
 				}
 			}
 		}
