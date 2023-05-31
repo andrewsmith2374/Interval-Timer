@@ -14,6 +14,11 @@
 		DB511D8E2A27F41700FA076B /* TimerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB511D872A27F3DE00FA076B /* TimerRow.swift */; };
 		DB511D8F2A27F41A00FA076B /* TimerRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785492A230D2F00A0DAFA /* TimerRunning.swift */; };
 		DB511D902A27F41A00FA076B /* TimerRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785492A230D2F00A0DAFA /* TimerRunning.swift */; };
+		DB511D982A27F81100FA076B /* Timers.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB511D972A27F81100FA076B /* Timers.plist */; };
+		DB511D992A27F81100FA076B /* Timers.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB511D972A27F81100FA076B /* Timers.plist */; };
+		DB511D9B2A27F95600FA076B /* TimerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB511D9A2A27F95600FA076B /* TimerFetcher.swift */; };
+		DB511D9C2A27F95600FA076B /* TimerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB511D9A2A27F95600FA076B /* TimerFetcher.swift */; };
+		DB511D9D2A27F95600FA076B /* TimerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB511D9A2A27F95600FA076B /* TimerFetcher.swift */; };
 		DB820FD92A1F511B00C1C660 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
 		DB820FDA2A1F511B00C1C660 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
 		DB87851B2A230CA900A0DAFA /* Interval_Timer_MiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87851A2A230CA900A0DAFA /* Interval_Timer_MiniApp.swift */; };
@@ -102,6 +107,8 @@
 
 /* Begin PBXFileReference section */
 		DB511D872A27F3DE00FA076B /* TimerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRow.swift; sourceTree = "<group>"; };
+		DB511D972A27F81100FA076B /* Timers.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Timers.plist; sourceTree = "<group>"; };
+		DB511D9A2A27F95600FA076B /* TimerFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFetcher.swift; sourceTree = "<group>"; };
 		DB820FD82A1F511B00C1C660 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		DB8785182A230CA900A0DAFA /* Interval Timer Mini Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Timer Mini Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB87851A2A230CA900A0DAFA /* Interval_Timer_MiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval_Timer_MiniApp.swift; sourceTree = "<group>"; };
@@ -178,6 +185,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB511D962A27F7F500FA076B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB511D972A27F81100FA076B /* Timers.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DB8785192A230CA900A0DAFA /* Interval Timer Mini Watch App */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +271,7 @@
 		DB96051C2A1EFD4700BDB49A /* Interval Timer */ = {
 			isa = PBXGroup;
 			children = (
+				DB511D962A27F7F500FA076B /* Resources */,
 				DB9605482A1EFF4400BDB49A /* Models */,
 				DB96051D2A1EFD4700BDB49A /* Interval_TimerApp.swift */,
 				DB96051F2A1EFD4700BDB49A /* ContentView.swift */,
@@ -294,9 +310,10 @@
 		DB9605482A1EFF4400BDB49A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DB820FD82A1F511B00C1C660 /* Interval.swift */,
-				DB9605492A1EFF6F00BDB49A /* IntervalTimer.swift */,
+				DB511D9A2A27F95600FA076B /* TimerFetcher.swift */,
 				DB87854B2A23108100A0DAFA /* TimerInterface.swift */,
+				DB9605492A1EFF6F00BDB49A /* IntervalTimer.swift */,
+				DB820FD82A1F511B00C1C660 /* Interval.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -474,6 +491,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB511D992A27F81100FA076B /* Timers.plist in Resources */,
 				DB8785222A230CAA00A0DAFA /* Preview Assets.xcassets in Resources */,
 				DB87851F2A230CAA00A0DAFA /* Assets.xcassets in Resources */,
 			);
@@ -497,6 +515,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB511D982A27F81100FA076B /* Timers.plist in Resources */,
 				DB9605262A1EFD4800BDB49A /* Preview Assets.xcassets in Resources */,
 				DB9605222A1EFD4800BDB49A /* Assets.xcassets in Resources */,
 			);
@@ -525,6 +544,7 @@
 			files = (
 				DB87854A2A230D2F00A0DAFA /* TimerRunning.swift in Sources */,
 				DB87854E2A23108100A0DAFA /* TimerInterface.swift in Sources */,
+				DB511D9D2A27F95600FA076B /* TimerFetcher.swift in Sources */,
 				DB8785472A230CD300A0DAFA /* IntervalTimer.swift in Sources */,
 				DB87855A2A27F0E500A0DAFA /* TimerList.swift in Sources */,
 				DB87851D2A230CA900A0DAFA /* ContentView.swift in Sources */,
@@ -559,6 +579,7 @@
 			files = (
 				DB9605202A1EFD4700BDB49A /* ContentView.swift in Sources */,
 				DB8785502A255C3800A0DAFA /* IntervalView.swift in Sources */,
+				DB511D9B2A27F95600FA076B /* TimerFetcher.swift in Sources */,
 				DB96051E2A1EFD4700BDB49A /* Interval_TimerApp.swift in Sources */,
 				DB820FD92A1F511B00C1C660 /* Interval.swift in Sources */,
 				DB87854C2A23108100A0DAFA /* TimerInterface.swift in Sources */,
@@ -583,6 +604,7 @@
 				DB820FDA2A1F511B00C1C660 /* Interval.swift in Sources */,
 				DB511D8C2A27F41500FA076B /* TimerList.swift in Sources */,
 				DB511D8F2A27F41A00FA076B /* TimerRunning.swift in Sources */,
+				DB511D9C2A27F95600FA076B /* TimerFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
