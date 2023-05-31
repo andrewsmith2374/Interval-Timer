@@ -12,7 +12,9 @@ struct PauseButton: View {
 	
 	
     var body: some View {
-		if interval.isRunning {
+		if interval.timeRemaining == 0.0 {
+			// Nothing
+		} else if interval.isRunning {
 			Button("Pause", action: interval.stop)
 		} else {
 			Button("Resume", action: interval.start)

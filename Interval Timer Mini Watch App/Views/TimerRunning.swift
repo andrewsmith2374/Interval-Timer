@@ -16,7 +16,7 @@ struct TimerRunning: View {
 			
 			IntervalView(interval: interface.timer.getCurrentInterval())
 			
-			Button("Skip", action: nextInterval)
+			Button("Next Interval", action: nextInterval)
 			
 			PauseButton(interval: interface.timer.getCurrentInterval())
 			
