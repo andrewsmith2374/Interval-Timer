@@ -29,6 +29,9 @@
 		DB8785542A26EB3C00A0DAFA /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785532A26EB3C00A0DAFA /* PauseButton.swift */; };
 		DB8785552A26EB3C00A0DAFA /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785532A26EB3C00A0DAFA /* PauseButton.swift */; };
 		DB8785562A26EB3C00A0DAFA /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785532A26EB3C00A0DAFA /* PauseButton.swift */; };
+		DB8785582A27F0E500A0DAFA /* TimerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785572A27F0E500A0DAFA /* TimerList.swift */; };
+		DB8785592A27F0E500A0DAFA /* TimerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785572A27F0E500A0DAFA /* TimerList.swift */; };
+		DB87855A2A27F0E500A0DAFA /* TimerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785572A27F0E500A0DAFA /* TimerList.swift */; };
 		DB96051E2A1EFD4700BDB49A /* Interval_TimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96051D2A1EFD4700BDB49A /* Interval_TimerApp.swift */; };
 		DB9605202A1EFD4700BDB49A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96051F2A1EFD4700BDB49A /* ContentView.swift */; };
 		DB9605222A1EFD4800BDB49A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9605212A1EFD4800BDB49A /* Assets.xcassets */; };
@@ -108,6 +111,7 @@
 		DB87854B2A23108100A0DAFA /* TimerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerInterface.swift; sourceTree = "<group>"; };
 		DB87854F2A255C3800A0DAFA /* IntervalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalView.swift; sourceTree = "<group>"; };
 		DB8785532A26EB3C00A0DAFA /* PauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseButton.swift; sourceTree = "<group>"; };
+		DB8785572A27F0E500A0DAFA /* TimerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerList.swift; sourceTree = "<group>"; };
 		DB96051A2A1EFD4700BDB49A /* Interval Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB96051D2A1EFD4700BDB49A /* Interval_TimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval_TimerApp.swift; sourceTree = "<group>"; };
 		DB96051F2A1EFD4700BDB49A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 		DB8785482A230CFA00A0DAFA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB8785572A27F0E500A0DAFA /* TimerList.swift */,
 				DB8785492A230D2F00A0DAFA /* TimerRunning.swift */,
 				DB87854F2A255C3800A0DAFA /* IntervalView.swift */,
 				DB8785532A26EB3C00A0DAFA /* PauseButton.swift */,
@@ -514,6 +519,7 @@
 				DB87854A2A230D2F00A0DAFA /* TimerRunning.swift in Sources */,
 				DB87854E2A23108100A0DAFA /* TimerInterface.swift in Sources */,
 				DB8785472A230CD300A0DAFA /* IntervalTimer.swift in Sources */,
+				DB87855A2A27F0E500A0DAFA /* TimerList.swift in Sources */,
 				DB87851D2A230CA900A0DAFA /* ContentView.swift in Sources */,
 				DB8785522A255C3800A0DAFA /* IntervalView.swift in Sources */,
 				DB87851B2A230CA900A0DAFA /* Interval_Timer_MiniApp.swift in Sources */,
@@ -550,6 +556,7 @@
 				DB87854C2A23108100A0DAFA /* TimerInterface.swift in Sources */,
 				DB96054A2A1EFF6F00BDB49A /* IntervalTimer.swift in Sources */,
 				DB8785542A26EB3C00A0DAFA /* PauseButton.swift in Sources */,
+				DB8785582A27F0E500A0DAFA /* TimerList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +570,7 @@
 				DB87854D2A23108100A0DAFA /* TimerInterface.swift in Sources */,
 				DB9605302A1EFD4800BDB49A /* Interval_TimerTests.swift in Sources */,
 				DB820FDA2A1F511B00C1C660 /* Interval.swift in Sources */,
+				DB8785592A27F0E500A0DAFA /* TimerList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
