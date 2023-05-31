@@ -17,7 +17,7 @@ struct PauseButton: View {
 		} else if interval.isRunning {
 			Button("Pause", action: interval.stop)
 		} else if interval.timeRemaining == interval.duration {
-			Button("Start", action: interval.stop)
+			Button("Start", action: interval.start)
 		} else {
 			Button("Resume", action: interval.start)
 		}

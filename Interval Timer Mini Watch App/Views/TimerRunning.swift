@@ -19,8 +19,6 @@ struct TimerRunning: View {
 			Button("Next Interval", action: nextInterval)
 			
 			PauseButton(interval: interface.timer.getCurrentInterval())
-			
-			// Button("Reset", action: interface.resetTimer)
 		}
 		.onAppear(perform: interface.timer.getCurrentInterval().start)
 		.onDisappear(perform: interface.resetTimer)
@@ -37,7 +35,7 @@ struct TimerRunning: View {
 
 struct TimerRunning_Previews: PreviewProvider {
     static var previews: some View {
-		let timer = IntervalTimer(autoContinue: true, intervals: [Interval(duration: 5.0), Interval(duration: 5.0), Interval(duration: 5.0)])
+		let timer = IntervalTimer(autoContinue: false, intervals: [Interval(duration: 5.0), Interval(duration: 5.0), Interval(duration: 5.0)])
 		
 		TimerRunning(interface: TimerInterface(timer: timer))
     }
