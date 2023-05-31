@@ -18,7 +18,6 @@ struct IntervalView: View {
 			
 			Text(String(roundToTenths(interval.timeRemaining)))
 		}
-			.onAppear(perform: interval.start)
     }
 	
 	private func roundToTenths(_ x : Double) -> Double {

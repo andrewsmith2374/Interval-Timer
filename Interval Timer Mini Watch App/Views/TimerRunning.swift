@@ -22,18 +22,21 @@ struct TimerRunning: View {
 			
 			Button("Reset", action: interface.resetTimer)
 		}
+		.onAppear(perform: interface.timer.getCurrentInterval().start)
     }
 	
 	func nextInterval() {
 		// Move the timer to the next interval
 		interface.nextInterval()
-		interface.timer.getCurrentInterval().start()
+		if interface.timer.autoContinue {
+			interface.timer.getCurrentInterval().start()
+		}
 	}
 }
 
 struct TimerRunning_Previews: PreviewProvider {
     static var previews: some View {
-		let timer = IntervalTimer(intervals: [Interval(duration: 5.0), Interval(duration: 5.0), Interval(duration: 5.0)])
+		let timer = IntervalTimer(autoContinue: false, intervals: [Interval(duration: 5.0), Interval(duration: 5.0), Interval(duration: 5.0)])
 		
 		TimerRunning(interface: TimerInterface(timer: timer))
     }
