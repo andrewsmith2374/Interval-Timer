@@ -17,34 +17,34 @@ final class Interval_TimerTests: XCTestCase {
 		let interval = Interval()
 		
 		XCTAssertEqual(String(describing: interval), "Interval 1")
-		XCTAssertEqual(interval.duration, 60.0)
+		XCTAssertEqual(interval.duration, .seconds(60))
 		XCTAssertEqual(interval.index, 0)
 		XCTAssertEqual(interval.isRunning, false)
-		XCTAssertEqual(interval.timeRemaining, 60.0)
+		XCTAssertEqual(interval.timeRemaining, .seconds(60))
 	}
 	
 	func testIntervalInitDuration() {
 		// Test that Interval properly initializes duration and timeRemaining
 		let interval = Interval(duration: 2.0)
 		
-		XCTAssertEqual(interval.duration, 2.0)
-		XCTAssertEqual(interval.timeRemaining, 2.0)
+		XCTAssertEqual(interval.duration, .seconds(2))
+		XCTAssertEqual(interval.timeRemaining, .seconds(2))
 	}
 	
 	func testIntervalInitDurationNegative() {
 		// Test that Interval properly handles negative duration inputs
 		let interval = Interval(duration: -20.0)
 		
-		XCTAssertEqual(interval.duration, 0.0)
-		XCTAssertEqual(interval.timeRemaining, 0.0)
+		XCTAssertEqual(interval.duration, .seconds(0))
+		XCTAssertEqual(interval.timeRemaining, .seconds(0))
 	}
 	
 	func testIntervalInitDurationInt() {
 		// Test that Interal properly handles int inputs
 		let interval = Interval(duration: 60)
 		
-		XCTAssertEqual(interval.duration, 60.0)
-		XCTAssertEqual(interval.timeRemaining, 60.0)
+		XCTAssertEqual(interval.duration, .seconds(60))
+		XCTAssertEqual(interval.timeRemaining, .seconds(60))
 	}
 	
 	func testIntervalInitIndex() {
@@ -63,7 +63,7 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testIntervalDescriptionChangesWithIndex() {
 		// Test that Interval's string representation changes when its index changes
-		var interval = Interval()
+		let interval = Interval()
 		XCTAssertEqual(String(describing: interval), "Interval 1")
 		
 		interval.index = 1
@@ -142,7 +142,7 @@ final class Interval_TimerTests: XCTestCase {
 		sleep(5)
 		interval._timerTick()
 		
-		let lowerBoundRemaining = interval.duration - 10.1 // Requires deviation of no more than 0.1 seconds
+		let lowerBoundRemaining = interval.duration - .seconds(10.1) // Requires deviation of no more than 0.1 seconds
 		XCTAssert(interval.timeRemaining > lowerBoundRemaining)
 	}
 	
