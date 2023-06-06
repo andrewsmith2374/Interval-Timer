@@ -14,9 +14,11 @@ struct IntervalView: View {
 		VStack {
 			Text(String(describing: interval))
 			
-			Text(String(interval.duration))
+			Text(String(interval.duration.formatted(
+				.time(pattern: .minuteSecond))))
 			
-			Text(String(roundToTenths(interval.timeRemaining)))
+			Text(String((interval.timeRemaining.formatted(
+				.time(pattern: .minuteSecond)))))
 		}
     }
 	

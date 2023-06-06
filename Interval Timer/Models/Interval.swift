@@ -47,19 +47,19 @@ public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
 	public var description: String {
 		return "Interval \(self.index + 1)"
 	}
-	let duration: TimeInterval
+	let duration: Duration
 	public var id = UUID()
 	var index: Int
 	@Published var isRunning: Bool
 	internal var _startTime: Date
 	var timer: Timer
-	@Published var timeRemaining: TimeInterval
+	@Published var timeRemaining: Duration
 	
 	init(duration: Double = 60.0, index: Int = 0) {
-		if duration < 0.0 {
-			self.duration = TimeInterval(0.0)
+		if duration < 0 {
+			self.duration = .seconds(0)
 		} else {
-			self.duration = TimeInterval(duration)
+			self.duration = .seconds(duration)
 		}
 		if index < 0 {
 			self.index = 0
@@ -74,7 +74,7 @@ public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
 	
 	func start() {
 		// Start this interval
-		if self.isRunning || self.timeRemaining <= 0.0 {
+		if self.isRunning || self.timeRemaining <= .seconds(0) {
 			return
 		}
 		self.isRunning = true
@@ -93,11 +93,13 @@ public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
 	
 	@objc internal func _timerTick() {
 		// Update timeRemaining and check if this interval has ended
-		if self.timeRemaining <= 0.0 {
+		var timeDifference: Duration
+		if self.timeRemaining <= .seconds(0) {
 			self.stop()
 			return
 		}
-		self.timeRemaining = max(self.timeRemaining - (Date().timeIntervalSince(self._startTime)), 0.0)
+		timeDifference = .milliseconds(Date().timeIntervalSince(self._startTime) * 1000)
+		self.timeRemaining = max(self.timeRemaining - timeDifference, .seconds(0))
 		self._startTime = Date()
 	}
 }

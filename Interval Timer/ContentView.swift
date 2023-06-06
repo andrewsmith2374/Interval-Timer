@@ -16,7 +16,7 @@ struct ContentView: View {
 			
 			Button("Stop", action: interval.stop)
 			
-			Text(String(interval.timeRemaining))
+			Text(String(describing: interval.timeRemaining))
         }
         .padding()
     }

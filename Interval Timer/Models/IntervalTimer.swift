@@ -89,7 +89,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 		}
 		
 		self.intervals[self._currentInterval].stop()
-		self.intervals[self._currentInterval].timeRemaining = 0.0
+		self.intervals[self._currentInterval].timeRemaining = .seconds(0)
 		self._currentInterval += 1
 	}
 	
