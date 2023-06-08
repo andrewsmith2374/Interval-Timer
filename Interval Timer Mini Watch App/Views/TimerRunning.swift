@@ -31,7 +31,12 @@ struct TimerRunning: View {
 		}
 		.onAppear(perform: interface.timer.getCurrentInterval().start)
 		.onDisappear(perform: interface.resetTimer)
+		.onReceive(interface.timer.getCurrentInterval(), perform: checkTimerDone)
     }
+	
+	func checkTimerDone() {
+		// Check to see if the current timer is finished
+	}
 	
 	func nextInterval() {
 		// Move the timer to the next interval

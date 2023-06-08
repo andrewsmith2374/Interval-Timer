@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Publisher
 
-public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
+public class Interval: CustomStringConvertible, Identifiable, ObservableObject, Publisher {
 	/*
 	 One interval of an IntervalTimer
 	 
@@ -55,6 +56,9 @@ public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
 	var timer: Timer
 	@Published var timeRemaining: Duration
 	
+	associatedtype Output: Bool
+	associatedtype Failure: Never
+	
 	init(duration: Double = 60.0, index: Int = 0) {
 		if duration < 0 {
 			self.duration = .seconds(0)
@@ -101,5 +105,9 @@ public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
 		timeDifference = .milliseconds(Date().timeIntervalSince(self._startTime) * 1000)
 		self.timeRemaining = max(self.timeRemaining - timeDifference, .seconds(0))
 		self._startTime = Date()
+	}
+	
+	func receive(subscribe: S) {
+		// Sets up a subscriber for this publisher
 	}
 }
