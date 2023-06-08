@@ -10,7 +10,6 @@ import SwiftUI
 struct PauseButton: View {
 	@ObservedObject var interval: Interval
 	
-	
     var body: some View {
 		if interval.timeRemaining == .seconds(0) {
 			// Nothing

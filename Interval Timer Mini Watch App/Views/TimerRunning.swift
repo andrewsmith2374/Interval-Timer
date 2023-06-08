@@ -12,11 +12,9 @@ struct TimerRunning: View {
 
 	var body: some View {
 		VStack {
-			Text(interface.timer.title)
-			
 			IntervalView(interval: interface.timer.getCurrentInterval())
 			
-			Button("Next Interval", action: nextInterval)
+			NextIntervalButton(interface: interface)
 			
 			PauseButton(interval: interface.timer.getCurrentInterval())
 		}
