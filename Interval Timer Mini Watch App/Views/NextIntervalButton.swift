@@ -11,7 +11,13 @@ struct NextIntervalButton: View {
 	@ObservedObject var interface: TimerInterface
 
     var body: some View {
-		Button("Next", action: nextInterval)
+		Button(action: nextInterval) {
+			Image(systemName: "forward.frame.fill")
+		}
+		.frame(width: 30, height: 30)
+		.foregroundColor(Color.white)
+		.background(Color.black)
+		.clipShape(Circle())
     }
 	
 	func nextInterval() {

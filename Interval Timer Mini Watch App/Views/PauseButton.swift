@@ -11,15 +11,27 @@ struct PauseButton: View {
 	@ObservedObject var interval: Interval
 	
     var body: some View {
-		if interval.timeRemaining == .seconds(0) {
-			// Nothing
-		} else if interval.isRunning {
-			Button("Pause", action: interval.stop)
-		} else if interval.timeRemaining == interval.duration {
-			Button("Start", action: interval.start)
-		} else {
-			Button("Resume", action: interval.start)
+		VStack {
+			if interval.timeRemaining == .seconds(0) {
+				// Nothing
+			} else if interval.isRunning {
+				Button(action: interval.stop) {
+					Image(systemName: "pause.fill")
+				}
+			} else if interval.timeRemaining == interval.duration {
+				Button(action: interval.start) {
+					Image(systemName: "play.fill")
+				}
+			} else {
+				Button(action: interval.start) {
+					Image(systemName: "play.fill")
+				}
+			}
 		}
+		.frame(width: 30, height: 30)
+		.foregroundColor(Color.black)
+		.background(Color.orange)
+		.clipShape(Circle())
     }
 }
 

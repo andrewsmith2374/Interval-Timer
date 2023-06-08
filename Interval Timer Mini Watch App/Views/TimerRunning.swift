@@ -12,11 +12,18 @@ struct TimerRunning: View {
 
 	var body: some View {
 		VStack {
-			IntervalView(interval: interface.timer.getCurrentInterval())
+			ZStack {
+				IntervalView(interval: interface.timer.getCurrentInterval())
+				
+				ProgressBar(interval: interface.timer.getCurrentInterval())
+			}
 			
-			NextIntervalButton(interface: interface)
-			
-			PauseButton(interval: interface.timer.getCurrentInterval())
+			HStack {
+				NextIntervalButton(interface: interface)
+						
+				PauseButton(interval: interface.timer.getCurrentInterval())
+			}
+			.padding()
 		}
 		.onAppear(perform: interface.timer.getCurrentInterval().start)
 		.onDisappear(perform: interface.resetTimer)
