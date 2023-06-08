@@ -12,13 +12,18 @@ struct IntervalView: View {
 	
     var body: some View {
 		VStack {
-			Text(String(describing: interval))
-			
 			Text(String(interval.duration.formatted(
 				.time(pattern: .minuteSecond))))
+			.font(.headline)
+			.foregroundColor(Color.gray)
 			
 			Text(String((interval.timeRemaining.formatted(
 				.time(pattern: .minuteSecond)))))
+			.font(.title)
+			
+			Text(String(describing: interval))
+				.font(.footnote)
+				.foregroundColor(Color.gray)
 		}
     }
 	
