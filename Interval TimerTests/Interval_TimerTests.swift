@@ -165,7 +165,7 @@ final class Interval_TimerTests: XCTestCase {
 		// Test that IntervalTimer initializes proper default values
 		let intervalTimer = IntervalTimer()
 		
-		XCTAssertEqual(intervalTimer.autoContinue, false)
+		XCTAssertEqual(intervalTimer.autoContinue, true)
 		XCTAssertEqual(intervalTimer._currentInterval, 0)
 		XCTAssertEqual(String(describing: intervalTimer), "Interval Timer with 0 Intervals")
 		XCTAssert(intervalTimer.intervals.isEmpty)

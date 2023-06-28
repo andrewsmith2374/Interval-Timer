@@ -60,7 +60,7 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	var intervals: [Interval]
 	var title: String
 	
-	init(autoContinue: Bool = false, intervals: [Interval] = [], title: String = "Timer") {
+	init(autoContinue: Bool = true, intervals: [Interval] = [], title: String = "Timer") {
 		// Creates a new IntervalTimer with given <autoContinue>, default true; <intervals>, default empty; and <title>, default 'Timer'
 		self.autoContinue = autoContinue
 		self._currentInterval = 0
