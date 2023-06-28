@@ -290,16 +290,15 @@ final class Interval_TimerTests: XCTestCase {
 	}
 		
 	func testIntervalTimerNextIntervalLastInterval() {
-		// Test that IntervalTimer.nextInterval() resets the timer when on the last interval
+		// Test that IntervalTimer.nextInterval() ends the timer when on the last interval
+		// Indirectly tests IntervalTimer.isLastInterval()
 		var intervalTimer = IntervalTimer(intervals: [Interval(), Interval(), Interval()])
 		intervalTimer._currentInterval = 2
 		intervalTimer.nextInterval()
 		
-		XCTAssertEqual(intervalTimer._currentInterval, 0)
-		for interval in intervalTimer.intervals {
-			XCTAssertEqual(interval.timeRemaining, interval.duration)
-			XCTAssertFalse(interval.isRunning)
-		}
+		XCTAssert(intervalTimer.isLastInterval())
+		XCTAssertEqual(intervalTimer.getCurrentInterval().timeRemaining, .seconds(0))
+		XCTAssertFalse(intervalTimer.getCurrentInterval().isRunning)
 	}
 	
 	func testIntervalTimerNextInterval() {
@@ -368,15 +367,15 @@ final class Interval_TimerTests: XCTestCase {
 	}
 	
 	func testTimerInterfaceNextIntervalLastInterval() {
-		// Test that TimerInterface.nextInterval() causes its timer to reset while on the last one
+		// Test that TimerInterface.nextInterval() causes its timer to end while on the last one
 		var timer = IntervalTimer(intervals: [Interval(), Interval(), Interval()])
 		timer.nextInterval()
 		timer.nextInterval()
-		var interface = TimerInterface(timer: timer)
+		let interface = TimerInterface(timer: timer)
 		XCTAssertEqual(interface.timer.getCurrentInterval().index, timer._currentInterval)
 		interface.nextInterval()
 		
-		XCTAssertEqual(interface.timer.getCurrentInterval().index, 0)
+		XCTAssertEqual(interface.timer.getCurrentInterval().index, interface.timer.getNumIntervals() - 1)
 	}
 	
 	func testTimerInterfaceResetTimerIntervalRunning() {

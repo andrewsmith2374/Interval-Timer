@@ -81,16 +81,11 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	
 	mutating func nextInterval() {
 		// Move this timer to the next interval, preserving play/pause state and iterating self.currentInterval
-		// TODO: Change to use internal method when self.isLastMethod() is implemented
-		let isLastInterval = self._currentInterval == self.getNumIntervals() - 1
-		if isLastInterval {
-			self.reset()
-			return
-		}
-		
 		self.intervals[self._currentInterval].stop()
 		self.intervals[self._currentInterval].timeRemaining = .seconds(0)
-		self._currentInterval += 1
+		if !self.isLastInterval() {
+			self._currentInterval += 1
+		}
 	}
 	
 	mutating func reset() {
@@ -119,5 +114,9 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 			return false
 		}
 		return self._currentInterval == self.intervals.count - 1
+	}
+	
+	func getLastInterval() -> Interval {
+		return self.intervals[self.getNumIntervals() - 1]
 	}
 }

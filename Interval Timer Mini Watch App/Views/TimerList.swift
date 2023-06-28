@@ -14,7 +14,7 @@ struct TimerList: View {
 		NavigationStack {
 			ForEach(timers) {
 				timer in NavigationLink {
-					TimerRunning(interface: TimerInterface(timer: timer))
+					TimerDetail(interface: TimerInterface(timer: timer), lastInterval: timer.getLastInterval())
 				} label: {
 					TimerRow(timer: timer)
 				}

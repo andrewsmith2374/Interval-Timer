@@ -31,7 +31,6 @@ struct TimerRunning: View {
 		}
 		.onAppear(perform: interface.timer.getCurrentInterval().start)
 		.onDisappear(perform: interface.resetTimer)
-		.onReceive(interface.timer.getCurrentInterval(), perform: checkTimerDone)
     }
 	
 	func checkTimerDone() {

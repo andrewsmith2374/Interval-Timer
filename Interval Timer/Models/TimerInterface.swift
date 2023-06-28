@@ -24,9 +24,11 @@ public class TimerInterface: Identifiable, ObservableObject {
 	 */
 	public let id = UUID()
 	@Published var timer: IntervalTimer
+	@Published var finished: Bool
 	
 	init(timer: IntervalTimer) {
 		self.timer = timer
+		self.finished = timer.intervals[timer.getNumIntervals() - 1].timeRemaining == .seconds(0) // && timer.getCurrentInterval().timeRemaining == .seconds(0)
 	}
 	
 	func nextInterval() {
