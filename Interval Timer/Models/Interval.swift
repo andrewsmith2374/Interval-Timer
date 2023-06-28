@@ -94,12 +94,11 @@ public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
 	@objc internal func _timerTick() {
 		// Update timeRemaining and check if this interval has ended
 		var timeDifference: Duration
-		if self.timeRemaining <= .seconds(0) {
-			self.stop()
-			return
-		}
 		timeDifference = .milliseconds(Date().timeIntervalSince(self._startTime) * 1000)
 		self.timeRemaining = max(self.timeRemaining - timeDifference, .seconds(0))
 		self._startTime = Date()
+		if self.timeRemaining <= .seconds(0) {
+			self.stop()
+		}
 	}
 }
