@@ -12,7 +12,12 @@ struct CenterText: View {
 	@ObservedObject var interval: Interval
 	
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		ZStack {
+			IntervalView(interval: interface.timer.getCurrentInterval())
+			
+			ProgressBar(interval: interface.timer.getCurrentInterval())
+		}
+		.offset(y: 5)
     }
 }
 

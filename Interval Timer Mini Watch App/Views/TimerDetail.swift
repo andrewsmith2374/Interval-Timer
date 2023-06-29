@@ -12,12 +12,7 @@ struct TimerDetail: View {
 
 	var body: some View {
 		ZStack {
-			ZStack {
-				IntervalView(interval: interface.timer.getCurrentInterval())
-				
-				ProgressBar(interval: interface.timer.getCurrentInterval())
-			}
-			.offset(y: 5)
+			CenterText(interface: interface, interval: interface.timer.getCurrentInterval())
 			
 			BottomBar(interface: interface, interval: interface.timer.getCurrentInterval())
 		}

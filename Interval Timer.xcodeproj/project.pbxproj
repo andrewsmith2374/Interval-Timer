@@ -18,6 +18,8 @@
 		DB40A8172A4D296100CCFF64 /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785532A26EB3C00A0DAFA /* PauseButton.swift */; };
 		DB40A81C2A4D2A8F00CCFF64 /* CenterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40A81B2A4D2A8F00CCFF64 /* CenterText.swift */; };
 		DB40A81D2A4D2A8F00CCFF64 /* CenterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40A81B2A4D2A8F00CCFF64 /* CenterText.swift */; };
+		DB40A81E2A4E074B00CCFF64 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB226EE72A3168EF00D22FFE /* ProgressBar.swift */; };
+		DB40A81F2A4E074B00CCFF64 /* IntervalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87854F2A255C3800A0DAFA /* IntervalView.swift */; };
 		DB511D882A27F3DE00FA076B /* TimerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB511D872A27F3DE00FA076B /* TimerRow.swift */; };
 		DB820FD92A1F511B00C1C660 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
 		DB820FDA2A1F511B00C1C660 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
@@ -594,11 +596,13 @@
 				DB9605202A1EFD4700BDB49A /* ContentView.swift in Sources */,
 				DB96051E2A1EFD4700BDB49A /* Interval_TimerApp.swift in Sources */,
 				DB40A8162A4D295F00CCFF64 /* NextIntervalButton.swift in Sources */,
+				DB40A81F2A4E074B00CCFF64 /* IntervalView.swift in Sources */,
 				DB40A81C2A4D2A8F00CCFF64 /* CenterText.swift in Sources */,
 				DB40A8142A4D277900CCFF64 /* BottomBar.swift in Sources */,
 				DB820FD92A1F511B00C1C660 /* Interval.swift in Sources */,
 				DB87854C2A23108100A0DAFA /* TimerInterface.swift in Sources */,
 				DB40A8172A4D296100CCFF64 /* PauseButton.swift in Sources */,
+				DB40A81E2A4E074B00CCFF64 /* ProgressBar.swift in Sources */,
 				DB96054A2A1EFF6F00BDB49A /* IntervalTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
