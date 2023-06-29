@@ -12,7 +12,7 @@ struct PauseButton: View {
 	
     var body: some View {
 		VStack {
-			if interval.timeRemaining == .seconds(0) {
+			if interval.timeRemaining == .zero {
 				// Nothing
 			} else if interval.isRunning {
 				Button(action: interval.stop) {
