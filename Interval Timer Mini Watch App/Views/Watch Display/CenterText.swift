@@ -13,12 +13,22 @@ struct CenterText: View {
 	
     var body: some View {
 		ZStack {
-			IntervalView(interval: interface.timer.getCurrentInterval())
+			if interval.timeRemaining == .zero {
+				Text("Interval Finished")
+					.font(.headline)
+					.onAppear(perform: intervalFinished)
+			} else {
+				IntervalView(interval: interface.timer.getCurrentInterval())
+			}
 			
 			ProgressBar(interval: interface.timer.getCurrentInterval())
 		}
 		.offset(y: 5)
     }
+	
+	func intervalFinished() {
+		// Play alarm
+	}
 }
 
 struct CenterText_Previews: PreviewProvider {
