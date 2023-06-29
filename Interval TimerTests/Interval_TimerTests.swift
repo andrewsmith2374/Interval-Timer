@@ -246,6 +246,13 @@ final class Interval_TimerTests: XCTestCase {
 
 		XCTAssertEqual(intervalTimer.getCurrentInterval().id, intervalTimer.intervals[2].id)
 	}
+	
+	func testIntervalTimerGetLastInterval() {
+		// Test that IntervalTimer.getLastInterval() returns the last interval
+		var intervalTimer = IntervalTimer(intervals: [Interval(), Interval(), Interval()])
+		
+		XCTAssertEqual(intervalTimer.getLastInterval().index, 2)
+	}
 
 	func testIntervalTimerGetNumIntervalsNoIntervals() {
 		// Test that IntervalTimer.getNumIntervals() returns 0 when there are no intervals
