@@ -12,29 +12,17 @@ struct TimerDetail: View {
 
 	var body: some View {
 		ZStack {
-			IntervalEnd(interval: interface.timer.getCurrentInterval())
-			
 			ZStack {
-				ZStack {
-					IntervalView(interval: interface.timer.getCurrentInterval())
-					
-					ProgressBar(interval: interface.timer.getCurrentInterval())
-				}
-				.offset(y: 5)
+				IntervalView(interval: interface.timer.getCurrentInterval())
 				
-				HStack(alignment: .center) {
-					NextIntervalButton(interface: interface)
-					
-					Spacer()
-					
-					PauseButton(interval: interface.timer.getCurrentInterval())
-				}
-				.offset(y: 80)
-				.padding()
+				ProgressBar(interval: interface.timer.getCurrentInterval())
 			}
-			.onAppear(perform: interface.timer.getCurrentInterval().start)
-			.onDisappear(perform: interface.resetTimer)
+			.offset(y: 5)
+			
+			BottomBar(interface: interface, interval: interface.timer.getCurrentInterval())
 		}
+		.onAppear(perform: interface.timer.getCurrentInterval().start)
+		.onDisappear(perform: interface.resetTimer)
     }
 	
 	func nextInterval() {
