@@ -34,7 +34,7 @@ struct BottomBar: View {
 
 struct BottomBar_Previews: PreviewProvider {
     static var previews: some View {
-		@State var timerInterface: TimerInterface = TimerInterface(timer: IntervalTimer(intervals: [Interval(), Interval()]))
+		let timerInterface: TimerInterface = TimerInterface(timer: IntervalTimer(intervals: [Interval(), Interval()]))
 		
 		BottomBar(interface: timerInterface, interval: timerInterface.timer.getCurrentInterval())
     }

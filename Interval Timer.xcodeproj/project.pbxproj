@@ -16,6 +16,8 @@
 		DB40A8152A4D277900CCFF64 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40A8132A4D277900CCFF64 /* BottomBar.swift */; };
 		DB40A8162A4D295F00CCFF64 /* NextIntervalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB226EE32A31671E00D22FFE /* NextIntervalButton.swift */; };
 		DB40A8172A4D296100CCFF64 /* PauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8785532A26EB3C00A0DAFA /* PauseButton.swift */; };
+		DB40A81C2A4D2A8F00CCFF64 /* CenterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40A81B2A4D2A8F00CCFF64 /* CenterText.swift */; };
+		DB40A81D2A4D2A8F00CCFF64 /* CenterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40A81B2A4D2A8F00CCFF64 /* CenterText.swift */; };
 		DB511D882A27F3DE00FA076B /* TimerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB511D872A27F3DE00FA076B /* TimerRow.swift */; };
 		DB820FD92A1F511B00C1C660 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
 		DB820FDA2A1F511B00C1C660 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
@@ -100,6 +102,7 @@
 		DB226EE32A31671E00D22FFE /* NextIntervalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextIntervalButton.swift; sourceTree = "<group>"; };
 		DB226EE72A3168EF00D22FFE /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		DB40A8132A4D277900CCFF64 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
+		DB40A81B2A4D2A8F00CCFF64 /* CenterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterText.swift; sourceTree = "<group>"; };
 		DB511D872A27F3DE00FA076B /* TimerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRow.swift; sourceTree = "<group>"; };
 		DB820FD82A1F511B00C1C660 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		DB8785182A230CA900A0DAFA /* Interval Timer Mini Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Timer Mini Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +180,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB40A8182A4D2A3D00CCFF64 /* TimerList */ = {
+			isa = PBXGroup;
+			children = (
+				DB8785572A27F0E500A0DAFA /* TimerList.swift */,
+				DB511D872A27F3DE00FA076B /* TimerRow.swift */,
+			);
+			path = TimerList;
+			sourceTree = "<group>";
+		};
+		DB40A8192A4D2A4C00CCFF64 /* Watch Display */ = {
+			isa = PBXGroup;
+			children = (
+				DB40A81B2A4D2A8F00CCFF64 /* CenterText.swift */,
+				DB87854F2A255C3800A0DAFA /* IntervalView.swift */,
+				DB226EE72A3168EF00D22FFE /* ProgressBar.swift */,
+			);
+			path = "Watch Display";
+			sourceTree = "<group>";
+		};
+		DB40A81A2A4D2A6800CCFF64 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				DB40A8132A4D277900CCFF64 /* BottomBar.swift */,
+				DB226EE32A31671E00D22FFE /* NextIntervalButton.swift */,
+				DB8785532A26EB3C00A0DAFA /* PauseButton.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		DB8785192A230CA900A0DAFA /* Interval Timer Mini Watch App */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,14 +249,10 @@
 		DB8785482A230CFA00A0DAFA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DB8785572A27F0E500A0DAFA /* TimerList.swift */,
-				DB511D872A27F3DE00FA076B /* TimerRow.swift */,
+				DB40A8182A4D2A3D00CCFF64 /* TimerList */,
 				DB8785492A230D2F00A0DAFA /* TimerDetail.swift */,
-				DB87854F2A255C3800A0DAFA /* IntervalView.swift */,
-				DB226EE72A3168EF00D22FFE /* ProgressBar.swift */,
-				DB40A8132A4D277900CCFF64 /* BottomBar.swift */,
-				DB226EE32A31671E00D22FFE /* NextIntervalButton.swift */,
-				DB8785532A26EB3C00A0DAFA /* PauseButton.swift */,
+				DB40A8192A4D2A4C00CCFF64 /* Watch Display */,
+				DB40A81A2A4D2A6800CCFF64 /* Controls */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -530,6 +558,7 @@
 				DB87854A2A230D2F00A0DAFA /* TimerDetail.swift in Sources */,
 				DB87855A2A27F0E500A0DAFA /* TimerList.swift in Sources */,
 				DB40A80F2A4CFBCE00CCFF64 /* Interval.swift in Sources */,
+				DB40A81D2A4D2A8F00CCFF64 /* CenterText.swift in Sources */,
 				DB87851D2A230CA900A0DAFA /* ContentView.swift in Sources */,
 				DB8785522A255C3800A0DAFA /* IntervalView.swift in Sources */,
 				DB511D882A27F3DE00FA076B /* TimerRow.swift in Sources */,
@@ -565,6 +594,7 @@
 				DB9605202A1EFD4700BDB49A /* ContentView.swift in Sources */,
 				DB96051E2A1EFD4700BDB49A /* Interval_TimerApp.swift in Sources */,
 				DB40A8162A4D295F00CCFF64 /* NextIntervalButton.swift in Sources */,
+				DB40A81C2A4D2A8F00CCFF64 /* CenterText.swift in Sources */,
 				DB40A8142A4D277900CCFF64 /* BottomBar.swift in Sources */,
 				DB820FD92A1F511B00C1C660 /* Interval.swift in Sources */,
 				DB87854C2A23108100A0DAFA /* TimerInterface.swift in Sources */,
