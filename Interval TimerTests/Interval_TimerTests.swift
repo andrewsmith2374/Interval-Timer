@@ -137,7 +137,7 @@ final class Interval_TimerTests: XCTestCase {
 		sleep(10)
 		interval._timerTick()
 		
-		XCTAssert(interval.timeRemaining == .seconds(0))
+		XCTAssert(interval.timeRemaining == .milliseconds(0))
 	}
 	
 	func testIntervalTimerTickAfterStopping() {
@@ -249,7 +249,7 @@ final class Interval_TimerTests: XCTestCase {
 	
 	func testIntervalTimerGetLastInterval() {
 		// Test that IntervalTimer.getLastInterval() returns the last interval
-		var intervalTimer = IntervalTimer(intervals: [Interval(), Interval(), Interval()])
+		let intervalTimer = IntervalTimer(intervals: [Interval(), Interval(), Interval()])
 		
 		XCTAssertEqual(intervalTimer.getLastInterval().index, 2)
 	}

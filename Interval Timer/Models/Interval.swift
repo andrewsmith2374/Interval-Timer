@@ -95,9 +95,10 @@ public class Interval: CustomStringConvertible, Identifiable, ObservableObject {
 		// Update timeRemaining and check if this interval has ended
 		var timeDifference: Duration
 		timeDifference = .milliseconds(Date().timeIntervalSince(self._startTime) * 1000)
-		self.timeRemaining = max(self.timeRemaining - timeDifference, .seconds(0))
+		self.timeRemaining = max(self.timeRemaining - timeDifference, .zero)
 		self._startTime = Date()
-		if self.timeRemaining <= .seconds(0) {
+		if self.timeRemaining <= .zero {
+			// self.timeRemaining = .zero
 			self.stop()
 		}
 	}
