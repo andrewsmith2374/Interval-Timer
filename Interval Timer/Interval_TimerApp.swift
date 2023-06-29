@@ -5,6 +5,7 @@
 //  Created by Andrew Smith on 2023-05-24.
 //
 
+import CoreHaptics
 import SwiftUI
 
 @main

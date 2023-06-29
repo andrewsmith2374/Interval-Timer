@@ -16,7 +16,7 @@ struct CenterText: View {
 			if interval.timeRemaining == .zero {
 				Text("Interval Finished")
 					.font(.headline)
-					.onAppear(perform: intervalFinished)
+					.onAppear(perform: playHaptic)
 			} else {
 				IntervalView(interval: interface.timer.getCurrentInterval())
 			}
@@ -25,10 +25,6 @@ struct CenterText: View {
 		}
 		.offset(y: 5)
     }
-	
-	func intervalFinished() {
-		// Play alarm
-	}
 }
 
 struct CenterText_Previews: PreviewProvider {
