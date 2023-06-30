@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct IntervalTimer: CustomStringConvertible, Identifiable {
+public struct IntervalTimer: Identifiable {
 	/*
 	 Timer that continues to predetermined intervals
 	 
@@ -17,106 +17,33 @@ public struct IntervalTimer: CustomStringConvertible, Identifiable {
 	 >>> intervalTimer.autoContinue
 	 false
 	 >>> intervalTimer.intervals
-	 [Interval]
+	 []
 	 >>> intervalTimer.title
 	 "Timer"
 	 >>> intervalTimer.autoContinue = true
-	 >>> intervalTimer.intervals = [Interval(), Interval()]
+	 >>> intervalTimer.intervals = [60.0, 50.0]
 	 >>> intervalTimer.title = "Title"
-	 >>> interval = intervalTimer.getCurrentInterval()
-	 >>> intervalTimer.getCurrentInterval().index
-	 0
-	 >>> intervalTimer.nextInterval()
-	 >>> intervalTimer.getCurrentInterval().index
-	 1
-	 >>> intervalTimer.isLastInterval()
-	 true
-	 >>> intervalTimer.reset()
-	 >>> intervalTimer.getCurrentInterval().index
-	 0
 	 
 	 === Attributes ===
 	 autoContinue: Whether the timer will automatically continue to the next interval after each interval elapses
-	 description: String representation of this timer
 	 id: Unique identifier
-	 intervals: A list of each interval contained in this timer
+	 intervals: A list of the duration of each interval contained in this timer
 	 title: The title of this timer
-
-	=== Private Attributes ===
-	 _currentInterval: The index of the current running interval
 	 */
 	var autoContinue: Bool
-	internal var _currentInterval: Int
-	public var description: String {
-		var suffix: String
-		if self.getNumIntervals() == 1 {
-			suffix = ""
-		} else {
-			suffix = "s"
-		}
-		return "Interval Timer with \(self.getNumIntervals()) Interval\(suffix)"
-	}
 	public let id = UUID()
-	var intervals: [Interval]
+	var intervals: [Double]
 	var title: String
 	
-	init(autoContinue: Bool = true, intervals: [Interval] = [], title: String = "Timer") {
+	init(autoContinue: Bool = true, intervals: [Double] = [], title: String = "Timer") {
 		// Creates a new IntervalTimer with given <autoContinue>, default true; <intervals>, default empty; and <title>, default 'Timer'
 		self.autoContinue = autoContinue
-		self._currentInterval = 0
 		self.intervals = intervals
 		self.title = title
-
-		self._initializeIntervals()
-	}
-		
-	private mutating func _initializeIntervals() {
-		// Assign indexes to each interval
-		var i: Int = 0
-		for _ in self.intervals {
-			intervals[i].index = i
-			i += 1
-		}
-	}
-	
-	mutating func nextInterval() {
-		// Move this timer to the next interval, preserving play/pause state and iterating self.currentInterval
-		self.intervals[self._currentInterval].stop()
-		self.intervals[self._currentInterval].timeRemaining = .seconds(0)
-		if !self.isLastInterval() {
-			self._currentInterval += 1
-		}
-	}
-	
-	mutating func reset() {
-		// Reset this timer, changing self.status and self.currentInterval to 0
-		for interval in self.intervals {
-			interval.stop()
-			interval.timeRemaining = interval.duration
-		}
-		
-		self._currentInterval = 0
-	}
-	
-	func getCurrentInterval() -> Interval {
-		// Return the current interval, or nothing if there are no intervals
-		return self.intervals[self._currentInterval]
 	}
 	
 	func getNumIntervals() -> Int {
 		// Return the number of intervals in this timer
 		return self.intervals.count
-	}
-
-	func isLastInterval() -> Bool {
-		// Return whether the current interval is the last one in this timer
-		if self.intervals.count == 0 {
-			return false
-		}
-		return self._currentInterval == self.intervals.count - 1
-	}
-	
-	func getLastInterval() -> Interval {
-		return self.intervals[self.getNumIntervals() - 1]
 	}
 }
