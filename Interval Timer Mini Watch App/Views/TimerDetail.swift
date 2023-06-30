@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct TimerDetail: View {
-	@ObservedObject var interface: TimerInterface
+	var timer: IntervalTimer
+	var currentInterval = 0
 
 	var body: some View {
 		ZStack {
-			CenterText(interface: interface, interval: interface.timer.getCurrentInterval())
+			CenterText(interval: Interval(duration: timer.intervals[currentInterval]))
 			
-			BottomBar(interface: interface, interval: interface.timer.getCurrentInterval())
+			BottomBar(interval)
 		}
 		.onAppear(perform: interface.timer.getCurrentInterval().start)
 		.onDisappear(perform: interface.resetTimer)
@@ -33,6 +34,6 @@ struct TimerRunning_Previews: PreviewProvider {
     static var previews: some View {
 		let timer = IntervalTimer(intervals: [Interval(duration: 5.0), Interval(duration: 5.0), Interval(duration: 5.0)])
 		
-		TimerDetail(interface: TimerInterface(timer: timer))
+		TimerDetail(timer: timer)
     }
 }

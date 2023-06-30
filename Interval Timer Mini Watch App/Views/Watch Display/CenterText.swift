@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CenterText: View {
-	@ObservedObject var interface: TimerInterface
-	@ObservedObject var interval: Interval
+	var interval: Interval
 	
     var body: some View {
 		ZStack {
@@ -18,10 +17,10 @@ struct CenterText: View {
 					.font(.headline)
 					.onAppear(perform: playHaptic)
 			} else {
-				IntervalView(interval: interface.timer.getCurrentInterval())
+				IntervalView(interval: interval)
 			}
 			
-			ProgressBar(interval: interface.timer.getCurrentInterval())
+			ProgressBar(interval: interval)
 		}
 		.offset(y: 5)
     }
@@ -29,8 +28,6 @@ struct CenterText: View {
 
 struct CenterText_Previews: PreviewProvider {
     static var previews: some View {
-		let timerInterface: TimerInterface = TimerInterface(timer: IntervalTimer(intervals: [Interval(), Interval()]))
-
-		CenterText(interface: timerInterface, interval: timerInterface.timer.getCurrentInterval())
+		CenterText(interval: Interval())
     }
 }

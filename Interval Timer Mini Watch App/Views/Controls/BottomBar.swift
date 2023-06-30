@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct BottomBar: View {
-	@ObservedObject var interface: TimerInterface
-	@ObservedObject var interval: Interval
+	var timer: IntervalTimer
 
 	var body: some View {
 		HStack(alignment: .center) {
@@ -34,8 +33,6 @@ struct BottomBar: View {
 
 struct BottomBar_Previews: PreviewProvider {
     static var previews: some View {
-		let timerInterface: TimerInterface = TimerInterface(timer: IntervalTimer(intervals: [Interval(), Interval()]))
-		
 		BottomBar(interface: timerInterface, interval: timerInterface.timer.getCurrentInterval())
     }
 }

@@ -183,6 +183,8 @@ final class Interval_TimerTests: XCTestCase {
 		
 		XCTAssertEqual(intervalTimer.getNumIntervals(), numIntervals)
 	}
+	
+	/*
 		
 	func testTimerInterfaceInit() {
 		// Test that TimerInterface initializes proper default values
@@ -258,5 +260,6 @@ final class Interval_TimerTests: XCTestCase {
 		measure {
 			// Put the code you want to measure the time of here.
 		}
+	 */
 	}
 }

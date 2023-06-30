@@ -14,7 +14,7 @@ struct TimerList: View {
 		NavigationStack {
 			ForEach(timers) {
 				timer in NavigationLink {
-					TimerDetail(interface: TimerInterface(timer: timer))
+					TimerDetail(timer: timer)
 				} label: {
 					TimerRow(timer: timer)
 				}
@@ -25,6 +25,6 @@ struct TimerList: View {
 
 struct TimerList_Previews: PreviewProvider {
     static var previews: some View {
-		TimerList(timers: [IntervalTimer(intervals: [Interval(), Interval(), Interval()]), IntervalTimer(intervals: [Interval(), Interval(), Interval()]), IntervalTimer(intervals: [Interval(), Interval(), Interval()])])
+		TimerList(timers: [IntervalTimer(intervals: [60.0, 60.0, 60.0]), IntervalTimer(intervals: [60.0, 60.0, 60.0]), IntervalTimer(intervals: [60.0, 60.0, 60.0])])
     }
 }
