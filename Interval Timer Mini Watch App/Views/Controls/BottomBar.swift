@@ -21,8 +21,8 @@ struct BottomBar: View {
 				
 				PauseButton(interval: interval)
 			} else {
-				PauseButton(interval: interval)
-				
+				ExitButton()
+
 				Spacer()
 
 				NextIntervalButton(numIntervals: numIntervals, currentInterval: $currentInterval)

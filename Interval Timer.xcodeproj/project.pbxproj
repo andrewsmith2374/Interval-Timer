@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB1A00212A50BCF200769E08 /* ExitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A00202A50BCF200769E08 /* ExitButton.swift */; };
 		DB40A80D2A4CFBCE00CCFF64 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9605492A1EFF6F00BDB49A /* IntervalTimer.swift */; };
 		DB40A80F2A4CFBCE00CCFF64 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
 		DB40A82A2A4E132800CCFF64 /* HapticPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40A8282A4E132800CCFF64 /* HapticPlayer.swift */; };
@@ -94,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DB1A00202A50BCF200769E08 /* ExitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitButton.swift; sourceTree = "<group>"; };
 		DB226EE32A31671E00D22FFE /* NextIntervalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextIntervalButton.swift; sourceTree = "<group>"; };
 		DB226EE72A3168EF00D22FFE /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		DB40A8132A4D277900CCFF64 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				DB40A8132A4D277900CCFF64 /* BottomBar.swift */,
 				DB226EE32A31671E00D22FFE /* NextIntervalButton.swift */,
 				DB8785532A26EB3C00A0DAFA /* PauseButton.swift */,
+				DB1A00202A50BCF200769E08 /* ExitButton.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBAA19B22A4FA8B1002A5CBC /* PauseButton.swift in Sources */,
+				DB1A00212A50BCF200769E08 /* ExitButton.swift in Sources */,
 				DBAA19B42A4FA8B1002A5CBC /* NextIntervalButton.swift in Sources */,
 				DB40A80D2A4CFBCE00CCFF64 /* IntervalTimer.swift in Sources */,
 				DBAA19B12A4FA8B1002A5CBC /* IntervalText.swift in Sources */,
