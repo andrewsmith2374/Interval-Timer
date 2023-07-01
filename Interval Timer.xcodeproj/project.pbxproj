@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DB40A80D2A4CFBCE00CCFF64 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9605492A1EFF6F00BDB49A /* IntervalTimer.swift */; };
 		DB40A80F2A4CFBCE00CCFF64 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
-		DB40A8292A4E132800CCFF64 /* HapticPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40A8282A4E132800CCFF64 /* HapticPlayer.swift */; };
 		DB40A82A2A4E132800CCFF64 /* HapticPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40A8282A4E132800CCFF64 /* HapticPlayer.swift */; };
 		DB511D882A27F3DE00FA076B /* TimerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB511D872A27F3DE00FA076B /* TimerRow.swift */; };
 		DB820FD92A1F511B00C1C660 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB820FD82A1F511B00C1C660 /* Interval.swift */; };
@@ -592,7 +591,6 @@
 			files = (
 				DB9605202A1EFD4700BDB49A /* ContentView.swift in Sources */,
 				DB96051E2A1EFD4700BDB49A /* Interval_TimerApp.swift in Sources */,
-				DB40A8292A4E132800CCFF64 /* HapticPlayer.swift in Sources */,
 				DB820FD92A1F511B00C1C660 /* Interval.swift in Sources */,
 				DB96054A2A1EFF6F00BDB49A /* IntervalTimer.swift in Sources */,
 			);

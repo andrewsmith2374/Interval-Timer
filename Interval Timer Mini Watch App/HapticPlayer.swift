@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import WatchKit
 
 func playHaptic() {
 	// Play a haptic pattern
-	print("Hello")
+	var hapticDevice = WKInterfaceDevice()
+	
+	hapticDevice.play(WKHapticType(rawValue: 5).unsafelyUnwrapped)
 }
