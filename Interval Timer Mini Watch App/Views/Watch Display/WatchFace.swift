@@ -6,17 +6,20 @@
 //
 
 import SwiftUI
+import WatchKit
 
 struct WatchFace: View {
 	@ObservedObject var interval: Interval
 	var currentInterval: Int
+	var hapticPlayer: HapticPlayer = HapticPlayer()
 	
     var body: some View {
 		ZStack {
 			if interval.timeRemaining == .zero {
 				Text("Interval Finished")
 					.font(.headline)
-					.onAppear(perform: playHaptic)
+					.onAppear(perform: hapticPlayer.startTimer)
+					.onDisappear(perform: hapticPlayer.endTimer)
 			} else {
 				IntervalText(interval: interval, currentInterval: currentInterval)
 			}
