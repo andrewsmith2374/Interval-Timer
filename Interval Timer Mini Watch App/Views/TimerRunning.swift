@@ -12,7 +12,7 @@ struct TimerRunning: View {
 	@State private var currentInterval: Int = 0
 
 	var body: some View {
-		IntervalDetail(interval: Interval(duration: timer.intervals[currentInterval]), currentInterval: $currentInterval)
+		IntervalDetail(numIntervals: timer.getNumIntervals(), interval: Interval(duration: timer.intervals[currentInterval]), currentInterval: $currentInterval)
     }
 }
 

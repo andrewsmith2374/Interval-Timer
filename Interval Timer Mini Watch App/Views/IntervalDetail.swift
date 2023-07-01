@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct IntervalDetail: View {
+	var numIntervals: Int
 	@ObservedObject var interval: Interval
 	@Binding var currentInterval: Int
 	
@@ -15,9 +16,8 @@ struct IntervalDetail: View {
 		ZStack {
 			WatchFace(interval: interval, currentInterval: currentInterval)
 			
-			BottomBar(interval: interval, currentInterval: $currentInterval)
+			BottomBar(numIntervals: numIntervals, interval: interval, currentInterval: $currentInterval)
 		}
-		.onAppear(perform: interval.start)
     }
 }
 
@@ -25,6 +25,6 @@ struct IntervalDetail_Previews: PreviewProvider {
     static var previews: some View {
 		@State var currentInterval: Int = 0
 		
-		IntervalDetail(interval: Interval(), currentInterval: $currentInterval)
+		IntervalDetail(numIntervals: 3, interval: Interval(), currentInterval: $currentInterval)
     }
 }
