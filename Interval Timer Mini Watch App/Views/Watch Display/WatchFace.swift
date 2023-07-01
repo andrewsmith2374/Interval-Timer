@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WatchFace: View {
-	var interval: Interval
+	@ObservedObject var interval: Interval
 	var currentInterval: Int
 	
     var body: some View {
@@ -29,6 +29,6 @@ struct WatchFace: View {
 
 struct CenterText_Previews: PreviewProvider {
     static var previews: some View {
-		WatchFace(interval: Interval(), currentInterval: 0)
+		WatchFace(interval: Interval(duration: 5), currentInterval: 0)
     }
 }

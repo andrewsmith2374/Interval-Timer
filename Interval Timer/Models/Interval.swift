@@ -54,6 +54,8 @@ public class Interval: Identifiable, ObservableObject {
 		self._startTime = Date()
 		self._timer = Timer()
 		self.timeRemaining = self.duration
+		
+		self.start()
 	}
 	
 	func start() {
