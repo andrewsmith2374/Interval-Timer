@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct IntervalView: View {
+struct IntervalText: View {
 	@ObservedObject var interval: Interval
+	var currentInterval: Int
 	
     var body: some View {
 		VStack {
@@ -21,7 +22,7 @@ struct IntervalView: View {
 				.time(pattern: .minuteSecond)))))
 			.font(.title)
 			
-			Text(String(describing: interval))
+			Text("Interval " + String(currentInterval + 1))
 				.font(.footnote)
 				.foregroundColor(Color.gray)
 		}
@@ -35,6 +36,6 @@ struct IntervalView: View {
 struct IntervalView_Previews: PreviewProvider {
     static var previews: some View {
 		@State var interval = Interval(duration: 5.0)
-		IntervalView(interval: interval)
+		IntervalText(interval: interval, currentInterval: 0)
     }
 }

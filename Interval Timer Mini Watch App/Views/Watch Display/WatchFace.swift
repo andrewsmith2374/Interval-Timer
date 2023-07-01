@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct CenterText: View {
+struct WatchFace: View {
 	var interval: Interval
+	var currentInterval: Int
 	
     var body: some View {
 		ZStack {
@@ -17,7 +18,7 @@ struct CenterText: View {
 					.font(.headline)
 					.onAppear(perform: playHaptic)
 			} else {
-				IntervalView(interval: interval)
+				IntervalText(interval: interval, currentInterval: currentInterval)
 			}
 			
 			ProgressBar(interval: interval)
@@ -28,6 +29,6 @@ struct CenterText: View {
 
 struct CenterText_Previews: PreviewProvider {
     static var previews: some View {
-		CenterText(interval: Interval())
+		WatchFace(interval: Interval(), currentInterval: 0)
     }
 }

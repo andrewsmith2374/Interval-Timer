@@ -8,22 +8,23 @@
 import SwiftUI
 
 struct BottomBar: View {
-	var timer: IntervalTimer
+	@ObservedObject var interval: Interval
+	@Binding var currentInterval: Int
 
 	var body: some View {
 		HStack(alignment: .center) {
 			if interval.isRunning {
-				NextIntervalButton(interface: interface)
+				NextIntervalButton(currentInterval: $currentInterval)
 				
 				Spacer()
 				
-				PauseButton(interval: interface.timer.getCurrentInterval())
+				PauseButton(interval: interval)
 			} else {
-				PauseButton(interval: interface.timer.getCurrentInterval())
+				PauseButton(interval: interval)
 				
 				Spacer()
 
-				NextIntervalButton(interface: interface)
+				NextIntervalButton(currentInterval: $currentInterval)
 			}
 		}
 		.offset(y: 80)
@@ -33,6 +34,8 @@ struct BottomBar: View {
 
 struct BottomBar_Previews: PreviewProvider {
     static var previews: some View {
-		BottomBar(interface: timerInterface, interval: timerInterface.timer.getCurrentInterval())
+		@State var currentInterval: Int = 0
+		
+		BottomBar(interval: Interval(duration: 5.0), currentInterval: $currentInterval)
     }
 }

@@ -14,7 +14,7 @@ struct TimerList: View {
 		NavigationStack {
 			ForEach(timers) {
 				timer in NavigationLink {
-					TimerDetail(timer: timer)
+					TimerRunning(timer: timer)
 				} label: {
 					TimerRow(timer: timer)
 				}

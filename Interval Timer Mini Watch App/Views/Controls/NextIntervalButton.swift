@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct NextIntervalButton: View {
-	@ObservedObject var interface: TimerInterface
+	@Binding var currentInterval: Int
 
     var body: some View {
-		Button(action: nextInterval) {
+		Button(action: { currentInterval += 1 }) {
 			Image(systemName: "forward.frame.fill")
 		}
 		.frame(width: 30, height: 30)
@@ -19,18 +19,12 @@ struct NextIntervalButton: View {
 		.background(Color.black)
 		.clipShape(Circle())
     }
-	
-	func nextInterval() {
-		// Move the timer to the next interval
-		interface.nextInterval()
-		if interface.timer.autoContinue {
-			interface.timer.getCurrentInterval().start()
-		}
-	}
 }
 
 struct NextIntervalButton_Previews: PreviewProvider {
     static var previews: some View {
-		NextIntervalButton(interface: TimerInterface(timer: IntervalTimer(intervals: [Interval(), Interval()])))
+		@State var currentInterval: Int = 0
+		
+		NextIntervalButton(currentInterval: $currentInterval)
     }
 }
