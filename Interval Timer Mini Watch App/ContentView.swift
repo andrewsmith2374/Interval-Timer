@@ -17,6 +17,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-		ContentView(timers: [IntervalTimer(intervals: [60.0, 60.0, 60.0]), IntervalTimer(intervals: [60.0, 60.0, 60.0]), IntervalTimer(intervals: [60.0, 60.0, 60.0])])
+		ContentView(timers: [IntervalTimer(intervals: [60.0, 60.0, 60.0]), IntervalTimer(intervals: [60.0, 60.0, 60.0]), IntervalTimer(intervals: [60.0, 60.0, 60.0]), IntervalTimer(intervals: [5, 5, 5]), IntervalTimer(intervals: [5, 5, 5])])
     }
 }

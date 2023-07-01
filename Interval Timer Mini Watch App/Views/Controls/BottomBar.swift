@@ -14,7 +14,7 @@ struct BottomBar: View {
 
 	var body: some View {
 		HStack(alignment: .center) {
-			if interval.isRunning {
+			if interval.timeRemaining != .zero {
 				NextIntervalButton(numIntervals: numIntervals, currentInterval: $currentInterval)
 				
 				Spacer()

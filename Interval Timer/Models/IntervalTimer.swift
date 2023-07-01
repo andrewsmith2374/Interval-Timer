@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct IntervalTimer: Identifiable {
+public struct IntervalTimer: Hashable, Identifiable {
 	/*
 	 Timer that continues to predetermined intervals
 	 

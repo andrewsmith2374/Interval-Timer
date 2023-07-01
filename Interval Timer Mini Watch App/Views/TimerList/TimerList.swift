@@ -11,13 +11,12 @@ struct TimerList: View {
 	var timers: [IntervalTimer]
 
     var body: some View {
-		NavigationStack {
-			ForEach(timers) {
-				timer in NavigationLink {
-					TimerRunning(timer: timer)
-				} label: {
-					TimerRow(timer: timer)
-				}
+		NavigationView {
+			List(timers) {
+				timer in NavigationLink(timer.title, destination: TimerRunning(timer: timer))
+			}
+			.navigationDestination(for: IntervalTimer.self) {
+				timer in TimerRunning(timer: timer)
 			}
 		}
     }
