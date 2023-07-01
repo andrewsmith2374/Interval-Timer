@@ -96,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		DB1A00202A50BCF200769E08 /* ExitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitButton.swift; sourceTree = "<group>"; };
+		DB1A00222A50C4D900769E08 /* Interval-Timer-Mini-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Interval-Timer-Mini-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DB226EE32A31671E00D22FFE /* NextIntervalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextIntervalButton.swift; sourceTree = "<group>"; };
 		DB226EE72A3168EF00D22FFE /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		DB40A8132A4D277900CCFF64 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
@@ -211,8 +212,9 @@
 		DB8785192A230CA900A0DAFA /* Interval Timer Mini Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				DB40A8282A4E132800CCFF64 /* HapticPlayer.swift */,
+				DB1A00222A50C4D900769E08 /* Interval-Timer-Mini-Watch-App-Info.plist */,
 				DB8785482A230CFA00A0DAFA /* Views */,
+				DB40A8282A4E132800CCFF64 /* HapticPlayer.swift */,
 				DB87851A2A230CA900A0DAFA /* Interval_Timer_MiniApp.swift */,
 				DB87851C2A230CA900A0DAFA /* ContentView.swift */,
 				DB87851E2A230CAA00A0DAFA /* Assets.xcassets */,
@@ -661,6 +663,7 @@
 				DEVELOPMENT_TEAM = 8YFJF4TF38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Interval-Timer-Mini-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Interval Timer Mini";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "andrewsmith2374.Interval-Timer";
@@ -691,6 +694,7 @@
 				DEVELOPMENT_TEAM = 8YFJF4TF38;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Interval-Timer-Mini-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Interval Timer Mini";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "andrewsmith2374.Interval-Timer";
